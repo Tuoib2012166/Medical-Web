@@ -30,6 +30,11 @@ exports.getDoctors = async (req, res) => {
                 d.image,
                 d.gender,
                 d.birth_year,
+                d.introduction,
+                d.biography,
+                d.certifications,
+                d.main_workplace,
+                d.working_hours,
                 s.name AS specialty_name,
                 d.specialty,
                 d.created_at,
@@ -53,8 +58,14 @@ exports.getDoctors = async (req, res) => {
         }
 
         if (doctorId) {
-            selectDoctorsSql += ` AND d.id = ${doctorId}`
+            selectDoctorsSql += ' AND d.id = ?';
+            queryParams.push(doctorId);
         }
+        if (req.query.doctorName) {
+    selectDoctorsSql += ' AND LOWER(d.fullname) = ?';
+    queryParams.push(req.query.doctorName.replace(/-/g, ' ').toLowerCase());
+}
+
 
         const [doctors,] = await db.query(selectDoctorsSql, queryParams);
 
@@ -66,6 +77,7 @@ exports.getDoctors = async (req, res) => {
     }
 };
 
+
 exports.addDoctor = async (req, res) => {
     upload.single('image')(req, res, async (err) => {
         if (err) {
@@ -73,7 +85,21 @@ exports.addDoctor = async (req, res) => {
         }
 
         console.log("Add doctor request received", req.body);
-        const { username, password, fullname, phone, address, gender, birth_year, specialty } = req.body;
+        const {
+            username,
+            password,
+            fullname,
+            phone,
+            address,
+            gender,
+            birth_year,
+            specialty,
+            introduction,
+            biography,
+            certifications,
+            main_workplace,
+            working_hours,
+        } = req.body;
         const image = req.file ? req.file.path : null;
 
         const connection = await db.getConnection();
@@ -90,14 +116,35 @@ exports.addDoctor = async (req, res) => {
                 return res.status(400).json({ message: "Username already exists" });
             }
 
+            // Hash the password and insert into the users table
             const hashedPassword = bcrypt.hashSync(password, 10);
             const insertUserSql = 'INSERT INTO users (username, password, role, status) VALUES (?, ?, "doctor", 1)';
             const [userResult] = await connection.execute(insertUserSql, [username, hashedPassword]);
 
             const userId = userResult.insertId;
 
-            const insertDoctorSql = 'INSERT INTO doctors (user_id, fullname, phone, address, gender, birth_year, specialty, image, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())';
-            await connection.execute(insertDoctorSql, [userId, fullname, phone, address, gender, birth_year, specialty, image]);
+            // Insert doctor details into the doctors table
+            const insertDoctorSql = `
+                INSERT INTO doctors (
+                    user_id, fullname, phone, address, gender, birth_year, specialty,
+                    introduction, biography, certifications, main_workplace, working_hours, image, created_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())
+            `;
+            await connection.execute(insertDoctorSql, [
+                userId,
+                fullname,
+                phone,
+                address,
+                gender,
+                birth_year,
+                specialty,
+                introduction,
+                biography,
+                certifications,
+                main_workplace,
+                working_hours,
+                image,
+            ]);
 
             await connection.commit();
 
@@ -113,6 +160,7 @@ exports.addDoctor = async (req, res) => {
     });
 };
 
+
 exports.updateDoctor = async (req, res) => {
     upload.single('image')(req, res, async (err) => {
         if (err) {
@@ -121,7 +169,7 @@ exports.updateDoctor = async (req, res) => {
 
         console.log("Update doctor request received", req.body);
         const { id } = req.params;
-        const { fullname, username, phone, address, gender, birth_year, specialty } = req.body;
+        const { fullname, username, phone, address, gender, birth_year, specialty, main_workplace, working_hours, introduction, biography, certifications } = req.body;
         const image = req.file ? req.file.path : null;
 
         const connection = await db.getConnection();
@@ -139,14 +187,20 @@ exports.updateDoctor = async (req, res) => {
 
             const userId = rows[0].user_id;
 
+            // Cập nhật thông tin người dùng
             const updateUserSql = 'UPDATE users SET username = ? WHERE id = ?';
+            await connection.execute(updateUserSql, [username, userId]);
+
+            // Cập nhật thông tin bác sĩ
             const updateDoctorSql = `
                 UPDATE doctors 
-                SET fullname = ?, phone = ?, address = ?, gender = ?, birth_year = ?, specialty = ?, image = COALESCE(?, image) 
+                SET fullname = ?, phone = ?, address = ?, gender = ?, birth_year = ?, specialty = ?, 
+                    main_workplace = ?, working_hours = ?, introduction = ?, biography = ?, certifications = ?, 
+                    image = COALESCE(?, image)
                 WHERE id = ?
             `;
-            await connection.execute(updateUserSql, [username, userId]);
-            await connection.execute(updateDoctorSql, [fullname, phone, address, gender, birth_year, specialty, image, id]);
+            await connection.execute(updateDoctorSql, [fullname, phone, address, gender, birth_year, specialty, 
+                main_workplace, working_hours, introduction, biography, certifications, image, id]);
             await connection.commit();
 
             console.log("Doctor updated successfully");
@@ -160,6 +214,8 @@ exports.updateDoctor = async (req, res) => {
         }
     });
 };
+
+
 exports.deleteDoctor = async (req, res) => {
     console.log("Delete doctor request received", req.params);
     const { id } = req.params;
