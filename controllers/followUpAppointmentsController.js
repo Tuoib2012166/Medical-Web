@@ -2,13 +2,14 @@ const db = require('../db');
 
 // Get all follow-up appointments
 exports.getAllFollowUpAppointments = async (req, res) => {
+    const { patient_id } = req.query;
     try {
-        const sql = `
+        let sql = `
             SELECT
                 f.id,
                 f.patient_name as patient_id,
                 f.follow_up_date,
-                f.time,
+                -- f.time,
                 f.notes,
                 f.doctor_id,
                 d.fullname AS doctor_name,
@@ -19,10 +20,16 @@ exports.getAllFollowUpAppointments = async (req, res) => {
                 doctors d ON f.doctor_id = d.id
                     LEFT JOIN
                 patients p ON f.patient_name = p.id
+            WHERE TRUE
         `;
         console.log('SQL Query:', sql);
+        if (patient_id) {
+            sql += ` and f.patient_name = ${patient_id}`
+        }
+
         const [appointments,] = await db.query(sql);
-        return res.json(appointments);
+        console.log("appointments: ", appointments)
+        res.status(200).json(appointments);
     } catch (error) {
         console.error('Error fetching follow-up appointments:', error);
         return res.status(500).json({ message: 'An error occurred while fetching follow-up appointments' });

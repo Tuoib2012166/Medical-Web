@@ -69,7 +69,8 @@ exports.getAppointments = async (req, res) => {
                 d.id AS doctor_id,
                 s.name AS specialty,
                 ba.content,
-                ba.created_at
+                ba.created_at,
+                ba.user_id as patient_id
             FROM
                 booking_appointments ba
                     JOIN
@@ -102,11 +103,9 @@ exports.getAppointments = async (req, res) => {
             `;
             params.push(benhNhanId);
         }
-        console.log("selectAppointmentsSql: ", selectAppointmentsSql, benhNhanId, doctorId)
         // Execute the query with parameterized inputs
         const [appointments] = await db.query(selectAppointmentsSql, params);
 
-        console.log("Appointments retrieved", appointments);
         return res.json(appointments);
     } catch (error) {
         console.error("Failed to retrieve appointments", error);

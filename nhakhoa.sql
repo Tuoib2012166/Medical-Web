@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 18, 2024 lúc 03:59 AM
+-- Thời gian đã tạo: Th10 22, 2024 lúc 02:25 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -68,11 +68,11 @@ INSERT INTO `booking_appointments` (`id`, `fullname`, `phone`, `address`, `gende
 (18, 'Nguyễn Tươi', '1686812933', 'Ang Gianb', 'Nam', 2002, '2024-11-05', '10:37:00', 8, '213123', '2024-11-04 22:37:09', 'accept', 0),
 (19, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-08', '16:01:00', 5, 'okok', '2024-11-08 15:01:11', 'accept', 22),
 (20, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-08', '16:01:00', 1, 'ko okok', '2024-11-08 15:01:38', 'reject', 0),
-(21, 'TT Nguyễn', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-08', '16:04:00', 2, 'okok', '2024-11-08 15:03:32', 'pending', 22),
+(21, 'TT Nguyễn', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-08', '16:04:00', 2, 'okok', '2024-11-08 15:03:32', 'accept', 22),
 (22, 'TT Nguyễn', '0386812933', 'tranhungdao 111', '', 1999, '2024-11-08', '16:04:00', 2, 'okokoko', '2024-11-08 15:03:48', 'pending', 0),
 (23, 'TT Nguyễn', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-08', '16:06:00', 8, 'okokok', '2024-11-08 15:05:23', 'accept', 23),
 (24, 'TT Nguyễn', '0386812933', 'tranhungdao 111', '', 1999, '2024-11-08', '16:06:00', 8, 'akkakaka', '2024-11-08 15:05:37', 'reject', 0),
-(25, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-08', '15:12:00', 8, 'ádasdas', '2024-11-08 15:12:58', 'accept', 23),
+(25, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-18', '10:00:00', 8, 'ádasdas', '2024-11-08 15:12:58', 'accept', 23),
 (26, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-08', '15:13:00', 8, '1231231', '2024-11-08 15:13:24', 'reject', 23),
 (27, 'Nguyễn Tươi 1234', '1686812933', 'Ang Gianb', 'Nam', 2000, '2024-11-09', '10:30:00', 8, '123', '2024-11-09 09:30:36', 'pending', 22),
 (28, 'Nguyen Tran Ngoc Tuoi 123', '1686812933', 'tranhungdao', 'Nam', 2000, '2024-11-11', '21:00:00', 8, '123', '2024-11-09 09:36:20', 'accept', 22),
@@ -91,7 +91,18 @@ INSERT INTO `booking_appointments` (`id`, `fullname`, `phone`, `address`, `gende
 (41, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-19', '11:11:00', 8, '123', '2024-11-18 00:07:26', 'pending', 0),
 (42, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-19', '12:31:00', 10, '123', '2024-11-18 00:07:42', 'pending', 0),
 (43, 'Nguyễn Trần Ngọc Tươi 123', '0386812933', 'tranhungdao 111', 'Nam', 2000, '2024-11-19', '11:00:00', 8, 'asd', '2024-11-18 00:26:16', 'pending', 0),
-(44, 'Nguyễn Trần Ngọc Tươi 1234', '0386812933', 'tranhungdao 111', 'Nam', 2000, '2024-11-18', '09:00:00', 8, 'asd', '2024-11-18 00:35:55', 'pending', 0);
+(44, 'Nguyễn Trần Ngọc Tươi 1234', '0386812933', 'tranhungdao 111', 'Nam', 2000, '2024-11-18', '09:00:00', 8, 'asd', '2024-11-18 00:35:55', 'pending', 0),
+(45, 'Nguyen Tran Ngoc Tuoi', '0686812933', 'tranhungdao', 'Nam', 1999, '2024-11-18', '08:00:00', 2, '8h', '2024-11-18 10:52:11', 'pending', 22),
+(46, 'Nguyen Tran Ngoc Tuoi', '0686812933', 'tranhungdao', 'Nam', 1999, '2024-11-18', '08:00:00', 1, '123', '2024-11-18 11:28:38', 'reject', 22),
+(47, 'Nguyen Tran Ngoc Tuoi', '0686812933', 'tranhungdao', 'Nam', 1999, '2024-11-18', '08:00:00', 12, '8h', '2024-11-18 11:41:52', 'pending', 22),
+(48, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 'Nam', 2000, '2024-11-18', '08:00:00', 12, '12', '2024-11-18 11:42:52', 'reject', 0),
+(49, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao', 'Nam', 1999, '2024-11-20', '12:00:00', 8, '123', '2024-11-18 22:43:45', 'pending', 22),
+(50, 'Nguyễn Ngọc Lợi', '0975263989', 'An Giang', 'Nam', 1999, '2024-11-19', '09:00:00', 11, 'ok', '2024-11-19 02:50:10', 'accept', 30),
+(51, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao', 'Nam', 1999, '2024-11-20', '10:00:00', 11, '123', '2024-11-19 09:46:01', 'accept', 22),
+(52, 'Nguyễn Ngọc Lợi', '0975263989', 'An Giang', 'Nam', 1999, '2024-11-22', '12:00:00', 11, 'ok', '2024-11-22 00:33:41', 'reject', 30),
+(53, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao', 'Nam', 1999, '2024-11-22', '13:00:00', 11, '123', '2024-11-22 00:55:57', 'pending', 22),
+(54, 'Anh Thu', '0686812933', 'tranhungdao', 'Nam', 2000, '2024-11-23', '11:00:00', 11, '123', '2024-11-22 00:56:31', 'pending', 0),
+(55, 'Nguyễn Ngọc Lợi', '0975263989', 'An Giang', 'Nam', 1999, '2024-11-22', '13:00:00', 8, '123', '2024-11-22 20:07:01', 'reject', 30);
 
 -- --------------------------------------------------------
 
@@ -107,6 +118,11 @@ CREATE TABLE `doctors` (
   `address` varchar(255) NOT NULL,
   `gender` int(11) NOT NULL,
   `birth_year` int(11) NOT NULL,
+  `introduction` text DEFAULT NULL,
+  `biography` text DEFAULT NULL,
+  `certifications` text DEFAULT NULL,
+  `main_workplace` varchar(255) DEFAULT NULL,
+  `working_hours` varchar(255) DEFAULT NULL,
   `specialty` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `image` varchar(255) DEFAULT NULL
@@ -116,16 +132,11 @@ CREATE TABLE `doctors` (
 -- Đang đổ dữ liệu cho bảng `doctors`
 --
 
-INSERT INTO `doctors` (`id`, `user_id`, `fullname`, `phone`, `address`, `gender`, `birth_year`, `specialty`, `created_at`, `image`) VALUES
-(1, 5, 'BS.Đinh Ngọc Khánh', '0123456789', 'Cần Thơ', 0, 1999, '2', '2024-11-01 08:56:07', 'uploads\\1730730668422-bac-si-dinh-ngoc-khanh-2.png'),
-(2, 9, 'BS.Mai Thị Trang', '0938444666', 'Cần thơ', 1, 2000, '3', '2024-11-04 01:05:39', 'uploads\\1730730773505-z5336771465710_0f4538c676f7f3640678ffdc96b5d68e.jpg'),
-(5, 17, 'BS.Lê Thị Hoài Anh', '0386812933', 'Cần Thơ', 1, 2000, '5', '2024-11-04 17:27:34', 'uploads\\1730730820419-400-1.png'),
-(8, 26, 'BS.Đỗ Văn Đức', '0123456789', 'Cần Thơ', 0, 2000, '12', '2024-11-04 21:34:20', 'uploads\\1730730860271-bs-duc.png'),
-(9, 27, 'BS.Phạm Ngọc Quốc', '0123456789', 'Cần Thơ', 0, 2000, '7', '2024-11-04 21:35:14', 'uploads\\1730730914252-bs-Ngoc-Quoc.png'),
-(10, 28, 'BS.Nguyễn Gia Bảo Khánh', '0123456789', 'Cần Thơ', 1, 2000, '8', '2024-11-04 21:35:53', 'uploads\\1730730952966-vietsmile_Bac-si-Nguyen-Gia-Bao-Khanh.png'),
-(11, 29, 'BS.Đặng Thị Hà Xuyên', '0123456789', 'Cần Thơ', 1, 1998, '9', '2024-11-04 21:36:25', 'uploads\\1730730985256-bac-si-dang-thi-ha-xuyen.png'),
-(12, 30, 'BS.Nguyễn Hữu Tân', '0123456789', 'Cần Thơ', 0, 1998, '10', '2024-11-04 21:37:02', 'uploads\\1730731022000-bac-si-nguyen-huu-tan.png'),
-(17, 42, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 0, 1222, '2', '2024-11-16 23:54:22', NULL);
+INSERT INTO `doctors` (`id`, `user_id`, `fullname`, `phone`, `address`, `gender`, `birth_year`, `introduction`, `biography`, `certifications`, `main_workplace`, `working_hours`, `specialty`, `created_at`, `image`) VALUES
+(1, 5, 'BS.Đinh Ngọc Khánh', '0123456788', 'Cần Thơ', 0, 1999, 'Bác sĩ Đinh Ngọc Khánh được đào tạo chuyên sâu về tiểu phẫu, implant, với khả năng sử dụng thành thạo các thiết bị công nghệ cao trong nha khoa, các kỹ thuật chuyên sâu trong cấy ghép implant. Với nhiều năm kinh nghiệm khám, tư vấn và điều trị trong ngành nha khoa, bác sĩ Khánh luôn đặt yếu tố an toàn – chính xác lên chất lượng, đưa đến cho khách hàng những trải nghiệm an toàn, hiệu quả nhất.', 'Năm 2018 – 2020: Công tác tại bệnh viện Hữu Nghị Việt Nam – Cuba Hà Nội\r\n\r\nNăm 2020 – 2021: Công tác tại nha khoa Bảo Việt Hà Nội\r\n\r\nNăm 2021 – 2023: Công tác tại nha khoa Việt Smile', 'Chứng chỉ implant Viện đào tạo Răng – Hàm – Mặt – Đại học Y Hà Nội\r\nChứng nhận Thực hành về phẫu thuật tăng thể tích xương -nâng xoang trong implant\r\nHội thảo Cách mạng mới trong implant – Bệnh viện Răng Hàm Mặt TP.HCM', 'Cần Thơ', '1', '2', '2024-11-01 08:56:07', 'uploads\\1730730668422-bac-si-dinh-ngoc-khanh-2.png'),
+(5, 17, 'BS.Lê Thị Hoài Anh', '0386812933', 'Cần Thơ', 1, 2000, NULL, NULL, NULL, NULL, NULL, '5', '2024-11-04 17:27:34', 'uploads\\1730730820419-400-1.png'),
+(8, 26, 'BS.Đỗ Văn Đức', '0123456789', 'Cần Thơ', 0, 2000, '123', '123123', '1231', 'Cần Thơ', '12', '1', '2024-11-04 21:34:20', 'uploads\\1730730860271-bs-duc.png'),
+(23, 52, 'Nguyen Tran Ngoc Tuoi', '0686812933', 'tranhungdao', 0, 2000, '123', '123', '123', 'Cần Thơ', '10h 12h', '10', '2024-11-22 14:20:04', 'uploads\\1732260003997-bs_bkhanh.png');
 
 -- --------------------------------------------------------
 
@@ -151,7 +162,7 @@ INSERT INTO `follow_up_appointments` (`id`, `patient_name`, `follow_up_date`, `n
 (4, '12', '2024-11-05', '123', 1, '2024-11-04 10:38:22'),
 (5, '15', '2024-11-19', 'tdhj', 1, '2024-11-04 10:57:04'),
 (6, '14', '2024-11-21', '1231', 5, '2024-11-04 11:02:10'),
-(7, '22', '2024-11-08', '123123', 1, '2024-11-07 15:20:38'),
+(7, '22', '2024-11-18', '1231', 1, '2024-11-07 15:20:38'),
 (8, '22', '2024-11-10', 'ok', 8, '2024-11-09 02:42:35');
 
 -- --------------------------------------------------------
@@ -161,21 +172,38 @@ INSERT INTO `follow_up_appointments` (`id`, `patient_name`, `follow_up_date`, `n
 --
 
 CREATE TABLE `medical_records` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
   `patient_id` int(11) NOT NULL,
   `doctor_id` int(11) NOT NULL,
-  `diagnosis` text NOT NULL,
-  `treatment` text NOT NULL,
-  `record_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `diagnosis` text DEFAULT NULL,
+  `treatment` text DEFAULT NULL,
+  `record_date` date DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
+  `birth_year` int(11) DEFAULT NULL,
+  `specialty` varchar(255) DEFAULT NULL,
+  `service` varchar(255) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `unit_price` decimal(10,2) DEFAULT NULL,
+  `total_price` decimal(10,2) DEFAULT NULL,
+  `prescription` text DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `service_id` int(11) DEFAULT NULL,
+  `appointment_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `medical_records`
 --
 
-INSERT INTO `medical_records` (`id`, `patient_id`, `doctor_id`, `diagnosis`, `treatment`, `record_date`) VALUES
-(8, 21, 5, '123', '123', '2024-11-16'),
-(9, 22, 1, '123312', '123213', '2024-11-09');
+INSERT INTO `medical_records` (`id`, `patient_id`, `doctor_id`, `diagnosis`, `treatment`, `record_date`, `address`, `phone`, `gender`, `birth_year`, `specialty`, `service`, `quantity`, `unit_price`, `total_price`, `prescription`, `amount`, `service_id`, `appointment_id`) VALUES
+(1, 0, 11, 'tốt', 'tốt', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 0, 11, 'xấu', 'xấu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 28, 11, 'tốt', 'tốt', '2024-11-19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 30, 11, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 22, 11, '12', '123', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, 22, 8, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -199,13 +227,9 @@ CREATE TABLE `patients` (
 --
 
 INSERT INTO `patients` (`id`, `user_id`, `fullname`, `phone`, `address`, `gender`, `birth_year`, `created_at`) VALUES
-(21, 31, 'Nguy', '0999999999', 'tranhungdao', 1, 1999, '2024-11-04 21:51:55'),
-(22, 32, 'Nguyen Tran Ngoc Tuoi', '0686812933', 'tranhungdao', 1, 2000, '2024-11-04 22:02:48'),
-(23, 33, 'TT Nguyễn', '0386812933', 'tranhungdao 111', 1, 2004, '2024-11-07 22:31:36'),
-(24, 34, '1', '111111111', '1', 1, 1, '2024-11-09 04:19:39'),
-(25, 35, 'Nguy', '0386812933', 'tranhungdao 111', 1, 1, '2024-11-14 19:51:12'),
-(26, 36, 'Nguy', '0386812933', 'tranhungdao 111', 1, 1, '2024-11-14 19:52:12'),
-(27, 37, '2', '3', '4', 1, 5, '2024-11-14 19:54:31');
+(22, 32, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao', 0, 2000, '2024-11-04 22:02:48'),
+(28, 43, 'Nguyễn Ngọc Tân', '0386812944', '123', 0, 1999, '2024-11-18 18:24:58'),
+(30, 46, 'Nguyễn Ngọc Lợi', '0975263989', 'An Giang', 0, 1999, '2024-11-18 19:35:01');
 
 -- --------------------------------------------------------
 
@@ -226,9 +250,56 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `specialty_id`, `name`, `description`, `price`) VALUES
-(1, 2, 'Khám răng khôn', 'Khám răng ', 1000000.00),
-(2, 3, 'admin', 'Lắp răng', 1500000.00),
-(3, 2, '123', '123', 1.50);
+(1, 1, 'Tư vấn bọc răng sứ', 'Tư vấn và lên kế hoạch bọc răng sứ', 500000.00),
+(2, 1, 'Bọc răng sứ thẩm mỹ', 'Dịch vụ bọc răng sứ cao cấp thẩm mỹ', 3000000.00),
+(3, 1, 'Bọc răng sứ toàn phần', 'Bọc răng sứ toàn hàm', 10000000.00),
+(4, 1, 'Chỉnh sửa răng sứ', 'Chỉnh sửa các vấn đề liên quan đến răng sứ', 2000000.00),
+(5, 1, 'Vệ sinh răng trước bọc sứ', 'Làm sạch răng trước khi bọc sứ', 800000.00),
+(6, 2, 'Tư vấn cấy ghép Implant', 'Tư vấn và lên kế hoạch cấy ghép', 700000.00),
+(7, 2, 'Cấy ghép Implant cơ bản', 'Thực hiện cấy ghép trụ Titanium', 15000000.00),
+(8, 2, 'Cấy ghép Implant nâng cao', 'Cấy ghép Implant cho các trường hợp đặc biệt', 20000000.00),
+(9, 2, 'Kiểm tra Implant định kỳ', 'Kiểm tra và bảo dưỡng Implant', 1000000.00),
+(10, 2, 'Ghép xương hỗ trợ cấy ghép', 'Ghép xương hàm hỗ trợ Implant', 5000000.00),
+(11, 3, 'Tư vấn niềng răng', 'Tư vấn lựa chọn phương pháp niềng răng', 500000.00),
+(12, 3, 'Niềng răng mắc cài kim loại', 'Niềng răng bằng mắc cài kim loại', 20000000.00),
+(13, 3, 'Niềng răng mắc cài sứ', 'Niềng răng bằng mắc cài sứ thẩm mỹ', 25000000.00),
+(14, 3, 'Niềng răng trong suốt', 'Niềng răng bằng khay trong suốt', 35000000.00),
+(15, 3, 'Điều chỉnh niềng răng định kỳ', 'Kiểm tra và điều chỉnh lực kéo niềng', 1000000.00),
+(16, 10, 'Tư vấn dán sứ Veneer', 'Tư vấn và đánh giá tình trạng răng', 300000.00),
+(17, 10, 'Dán sứ Veneer một răng', 'Thực hiện dán sứ Veneer cho từng răng', 4000000.00),
+(18, 10, 'Dán sứ Veneer toàn hàm', 'Dán sứ Veneer cho toàn bộ hàm', 35000000.00),
+(19, 10, 'Chỉnh sửa Veneer', 'Chỉnh sửa các vấn đề về Veneer', 1500000.00),
+(20, 10, 'Làm sạch răng trước dán sứ', 'Vệ sinh và chuẩn bị răng trước khi dán sứ', 800000.00),
+(21, 4, 'Tẩy trắng răng tại nhà', 'Cung cấp dụng cụ tẩy trắng răng tại nhà', 2000000.00),
+(22, 4, 'Tẩy trắng răng tại phòng khám', 'Thực hiện tẩy trắng răng với công nghệ cao', 3000000.00),
+(23, 4, 'Tẩy trắng răng bằng Laser', 'Tẩy trắng răng bằng công nghệ Laser', 4000000.00),
+(24, 4, 'Kiểm tra sau tẩy trắng', 'Đánh giá và chăm sóc sau tẩy trắng', 500000.00),
+(25, 4, 'Vệ sinh răng trước tẩy trắng', 'Làm sạch răng trước khi tẩy trắng', 1000000.00),
+(26, 5, 'Tư vấn nhổ răng khôn', 'Tư vấn và kiểm tra tình trạng răng khôn', 300000.00),
+(27, 5, 'Nhổ răng khôn mọc lệch', 'Nhổ răng khôn bị lệch với kỹ thuật an toàn', 2000000.00),
+(28, 5, 'Nhổ răng khôn mọc ngầm', 'Thực hiện nhổ răng khôn mọc ngầm', 2500000.00),
+(29, 5, 'Nhổ răng khôn siêu âm', 'Nhổ răng khôn với công nghệ siêu âm hiện đại', 3000000.00),
+(30, 5, 'Chăm sóc sau nhổ răng khôn', 'Dịch vụ kiểm tra và chăm sóc sau nhổ răng', 500000.00),
+(31, 6, 'Tư vấn điều trị nha chu', 'Tư vấn và kiểm tra các bệnh lý nha chu', 400000.00),
+(32, 6, 'Điều trị viêm nướu', 'Điều trị tình trạng viêm nướu nhẹ', 1500000.00),
+(33, 6, 'Điều trị viêm nha chu', 'Điều trị các bệnh lý viêm nha chu nghiêm trọng', 3000000.00),
+(34, 6, 'Ghép nướu', 'Thực hiện ghép nướu do nha chu tổn thương', 5000000.00),
+(35, 6, 'Vệ sinh răng nha chu', 'Vệ sinh răng và nướu để ngăn ngừa nha chu', 800000.00),
+(36, 7, 'Tư vấn điều trị tủy', 'Tư vấn và đánh giá tình trạng tủy răng', 300000.00),
+(37, 7, 'Điều trị tủy một răng', 'Điều trị tủy cho răng đơn lẻ', 2000000.00),
+(38, 7, 'Điều trị tủy nhiều chân', 'Điều trị tủy cho răng nhiều chân', 3000000.00),
+(39, 7, 'Tái tạo tủy răng', 'Tái tạo phần tủy bị tổn thương', 3500000.00),
+(40, 7, 'Kiểm tra sau điều trị tủy', 'Kiểm tra tình trạng răng sau điều trị tủy', 500000.00),
+(41, 8, 'Tư vấn hàn trám răng', 'Tư vấn và lựa chọn vật liệu hàn trám', 200000.00),
+(42, 8, 'Hàn răng sâu', 'Thực hiện hàn trám răng bị sâu', 500000.00),
+(43, 8, 'Trám răng thẩm mỹ', 'Hàn trám răng với vật liệu thẩm mỹ', 1000000.00),
+(44, 8, 'Trám răng chống ê buốt', 'Trám răng để giảm ê buốt', 800000.00),
+(45, 8, 'Chăm sóc răng sau hàn trám', 'Kiểm tra và chăm sóc sau hàn trám', 300000.00),
+(46, 9, 'Tư vấn chăm sóc răng miệng', 'Tư vấn vệ sinh răng miệng trong thai kỳ', 200000.00),
+(47, 9, 'Làm sạch răng cho bà bầu', 'Làm sạch răng miệng an toàn cho phụ nữ mang thai', 800000.00),
+(48, 9, 'Điều trị viêm nướu', 'Điều trị viêm nướu nhẹ trong thai kỳ', 1200000.00),
+(49, 9, 'Kiểm tra sức khỏe răng miệng', 'Kiểm tra định kỳ sức khỏe răng miệng', 500000.00),
+(50, 9, 'Phòng ngừa bệnh lý nha khoa', 'Hướng dẫn phòng ngừa các bệnh răng miệng', 300000.00);
 
 -- --------------------------------------------------------
 
@@ -249,16 +320,16 @@ CREATE TABLE `specialties` (
 --
 
 INSERT INTO `specialties` (`id`, `name`, `description`, `created_at`, `image`) VALUES
-(1, 'Bọc răng sứ', 'Bọc răng sứ (phục hình cố định răng sứ) là sử dụng răng sứ được làm hoàn toàn từ sứ hoặc sứ kết hợp cùng kim loại để chụp lên phần răng khiếm khuyết hoặc hư tổn để tái tạo hình dáng, kích thước và màu sắc như răng thật.', '2024-11-03 18:31:12', 'uploads\\1730731188231-icon-boc-rang-su-1.png'),
-(2, 'Cấy ghép implant', 'Cấy ghép Implant (hay cắm Implant) là phương pháp dùng một trụ chân răng nhân tạo bằng Titanium đặt vào trong xương hàm tại vị trí răng đã mất. Trụ chân răng này sẽ thay thế chân răng thật, sau đó dùng răng sứ gắn lên trụ răng Implant tạo thành răng hoàn chỉnh.', '2024-11-03 18:32:18', 'uploads\\1730731259963-trong-rang-implant.jpg'),
-(3, 'Niềng răng thẩm mỹ', 'Niềng răng (chỉnh nha) là kỹ thuật nha khoa giúp cải thiện và khắc phục tình trạng răng mọc khấp khểnh, xô lệch gây mất tương quan giữa 2 hàm. Khác với bọc răng sứ hay các phương pháp nha khoa khác, niềng răng sử dụng các khí cụ tạo lực kéo nhằm di chuyển răng về vị trí đúng trên cung hàm mà không gây ảnh hưởng đến chất lượng và tuổi thọ răng sau này. ', '2024-11-04 14:41:29', 'uploads\\1730731289591-nieng-rang-tham-my.png'),
-(10, 'Mặt dán sứ Veneer', 'Mặt dán sứ Veneer là phương pháp phục hình thẩm mỹ giúp khắc phục khuyết điểm răng như răng thưa, sứt mẻ hoặc xỉn màu bằng cách dán một lớp sứ mỏng lên bề mặt răng.', '2024-11-17 14:17:31', 'uploads\\1731853536442-rang-su-veneer.png'),
-(4, 'Tẩy trắng răng', 'Tẩy trắng răng là phương pháp dùng các hợp chất kết hợp với năng lượng ánh sáng sẽ tạo ra phản ứng oxy hóa cắt đứt các chuỗi phân tử màu trong ngà răng. ', '2024-11-04 14:42:31', 'uploads\\1730731351663-icon-tay-trang-rang-1.png'),
-(5, 'Nhổ răng khôn', 'Răng khôn mọc ngầm là tình trạng rạng răng mọc sai và cần được loại bỏ sớm nhằm hạn chế ảnh hưởng đến các răng cạnh. ', '2024-11-04 14:43:04', 'uploads\\1730731384762-icon-nho-rang-khon-1.png'),
-(6, 'Bệnh lý nha chu', 'Bệnh nha chu là một bệnh nhiễm trùng nướu làm tổn thương mô mềm và phá hủy xương xung quanh răng. Trường hợp nhiễm trùng trở nên nghiêm trọng có thể khiến răng bị lỏng hoặc dẫn đến mất răng.', '2024-11-04 14:43:31', 'uploads\\1730731814536-icon-benh-ly-nha-chu.png'),
-(7, 'Điều trị tủy', 'Tủy răng chứa nhiều dây thần kinh và mạch máu có ở cả thân răng và chân răng (gọi là buồng tủy và ống tủy) nằm trong hốc giữa ngà răng.', '2024-11-04 14:44:20', 'uploads\\1730731460572-dieu-tri-tuy.png'),
-(8, 'Hàn trám răng', 'Hàn trám răng là kỹ thuật mà bác sĩ sẽ sử dụng vật liệu trám bít để khôi phục lại hình dáng và chức năng của răng. Phương pháp này được sử dụng phổ biến trong nha khoa bởi mang lại ý nghĩa cả về thẩm mỹ lẫn điều trị và phòng ngừa bệnh lý răng miệng.', '2024-11-04 14:45:02', 'uploads\\1730731502843-icon-han-tram-rang-sau-01.jpg'),
-(9, 'Chăm sóc răng miệng cho phụ nữ mang thai', 'Giai đoạn mang thai, hệ miễn dịch, hóc môn cũng như lượng canxi trong cơ thể thay đổi liên tục, do đó, bà bầu dễ mắc các bệnh về răng miệng và viêm nướu, chảy máu chân răng, viêm nha chu, sâu răng… là bệnh lý phổ biến nhất mà phụ nữ mang thai thường gặp phải.', '2024-11-04 14:45:25', 'uploads\\1730731525299-Icon_Web-08.png');
+(1, 'Bọc răng sứ', 'Bọc răng sứ (phục hình cố định răng sứ) là sử dụng răng sứ được làm hoàn toàn từ sứ hoặc sứ kết hợp cùng kim loại để chụp lên phần răng khiếm khuyết hoặc hư tổn để tái tạo hình dáng, kích thước và màu sắc như răng thật.', '2024-11-03 18:31:12', 'uploads\\1732261806101-icon-boc-rang-su-1.png'),
+(2, 'Cấy ghép implant', 'Cấy ghép Implant (hay cắm Implant) là phương pháp dùng một trụ chân răng nhân tạo bằng Titanium đặt vào trong xương hàm tại vị trí răng đã mất. Trụ chân răng này sẽ thay thế chân răng thật, sau đó dùng răng sứ gắn lên trụ răng Implant tạo thành răng hoàn chỉnh.', '2024-11-03 18:32:18', 'uploads\\1732261829214-trong-rang-implant.jpg'),
+(3, 'Niềng răng thẩm mỹ', 'Niềng răng (chỉnh nha) là kỹ thuật nha khoa giúp cải thiện và khắc phục tình trạng răng mọc khấp khểnh, xô lệch gây mất tương quan giữa 2 hàm. Khác với bọc răng sứ hay các phương pháp nha khoa khác, niềng răng sử dụng các khí cụ tạo lực kéo nhằm di chuyển răng về vị trí đúng trên cung hàm mà không gây ảnh hưởng đến chất lượng và tuổi thọ răng sau này. ', '2024-11-04 14:41:29', 'uploads\\1732261835713-nieng-rang-tham-my.png'),
+(10, 'Mặt dán sứ Veneer', 'Mặt dán sứ Veneer là phương pháp phục hình thẩm mỹ giúp khắc phục khuyết điểm răng như răng thưa, sứt mẻ hoặc xỉn màu bằng cách dán một lớp sứ mỏng lên bề mặt răng.', '2024-11-17 14:17:31', 'uploads\\1732261842759-rang-su-veneer.png'),
+(4, 'Tẩy trắng răng', 'Tẩy trắng răng là phương pháp dùng các hợp chất kết hợp với năng lượng ánh sáng sẽ tạo ra phản ứng oxy hóa cắt đứt các chuỗi phân tử màu trong ngà răng. ', '2024-11-04 14:42:31', 'uploads\\1732261854147-icon-tay-trang-rang-1.png'),
+(5, 'Nhổ răng khôn', 'Răng khôn mọc ngầm là tình trạng rạng răng mọc sai và cần được loại bỏ sớm nhằm hạn chế ảnh hưởng đến các răng cạnh. ', '2024-11-04 14:43:04', 'uploads\\1732261860831-icon-nho-rang-khon-1.png'),
+(6, 'Bệnh lý nha chu', 'Bệnh nha chu là một bệnh nhiễm trùng nướu làm tổn thương mô mềm và phá hủy xương xung quanh răng. Trường hợp nhiễm trùng trở nên nghiêm trọng có thể khiến răng bị lỏng hoặc dẫn đến mất răng.', '2024-11-04 14:43:31', 'uploads\\1732261872466-icon-benh-ly-nha-chu.png'),
+(7, 'Điều trị tủy', 'Tủy răng chứa nhiều dây thần kinh và mạch máu có ở cả thân răng và chân răng (gọi là buồng tủy và ống tủy) nằm trong hốc giữa ngà răng.', '2024-11-04 14:44:20', 'uploads\\1732261879910-dieu-tri-tuy.png'),
+(8, 'Hàn trám răng', 'Hàn trám răng là kỹ thuật mà bác sĩ sẽ sử dụng vật liệu trám bít để khôi phục lại hình dáng và chức năng của răng. Phương pháp này được sử dụng phổ biến trong nha khoa bởi mang lại ý nghĩa cả về thẩm mỹ lẫn điều trị và phòng ngừa bệnh lý răng miệng.', '2024-11-04 14:45:02', 'uploads\\1732261891665-icon-han-tram-rang-sau-01.jpg'),
+(9, 'Chăm sóc răng miệng cho phụ nữ mang thai', 'Giai đoạn mang thai, hệ miễn dịch, hóc môn cũng như lượng canxi trong cơ thể thay đổi liên tục, do đó, bà bầu dễ mắc các bệnh về răng miệng và viêm nướu, chảy máu chân răng, viêm nha chu, sâu răng… là bệnh lý phổ biến nhất mà phụ nữ mang thai thường gặp phải.', '2024-11-04 14:45:25', 'uploads\\1732261902379-Icon_Web-08.png');
 
 -- --------------------------------------------------------
 
@@ -280,22 +351,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `status`, `created_at`) VALUES
-(5, 'khanh', '$2b$10$MRA1BaB8GLgDgrmd1bZKtOehdSAcSHXiZ9qagSrTxj43C/tMyAMsO', 'doctor', 1, '2024-11-01 08:55:23'),
-(9, 'trang', '$2b$10$CVYL6il0Mb24DzoHphP6tuClCvHkArNbV65WVcapQQtbpi9wK6tp6', 'doctor', 1, '2024-11-04 01:05:39'),
+(1, 'admin', '$2b$12$ZHHNDLAHIAN2gMomEX4ps.ZeO5DGvkppvY9hXQjhmADE635R5iFYS', 'admin', 1, '2024-11-18 19:39:16'),
+(5, 'drkhanh', '$2b$10$MRA1BaB8GLgDgrmd1bZKtOehdSAcSHXiZ9qagSrTxj43C/tMyAMsO', 'doctor', 1, '2024-11-01 08:55:23'),
 (17, 'anh', '$2b$10$c8vsDk35ZjdaL0zjuIR2MenWobzNh3boQRPdS6K/VHkngb4tTwKjm', 'doctor', 1, '2024-11-04 17:27:34'),
-(26, 'duc', '$2b$10$1TUmHnXWxOCRhpiGTwJQM.GQGhzdgd2VuxqXaBEb0iha7UilZyENW', 'doctor', 1, '2024-11-04 21:34:20'),
-(27, 'quoc', '$2b$10$riDKTHX06bBUCj7n4A9U7OElJZfIq1dZ7Xc1/kF3LY/9p9fOGikKu', 'doctor', 1, '2024-11-04 21:35:14'),
-(28, 'khanh', '$2b$10$ViQhgwSuV3Ba4YWKQoQszuAEeagQEXHoEsVTzUhyY9X4oCo8Gx2aK', 'doctor', 1, '2024-11-04 21:35:53'),
-(29, 'xuyen', '$2b$10$30ZrHuOzjsKW6CRNKJg7POni9E99.XeHVJwj5gNSYhTgBa4oQ.n8a', 'doctor', 1, '2024-11-04 21:36:25'),
-(30, 'tan', '$2b$10$pKeEUu1DJec/bJWjg1Va.OLRJKH/OYZRCevQlnXlXW4oU9Qh5gU9a', 'doctor', 1, '2024-11-04 21:37:02'),
-(31, 'admin', '$2b$10$uy9H0nbpSZrZhja6D10wFO0R7PBVrvgrnt.dx8Vs6TirWyP9u94ey', 'admin', 1, '2024-11-04 21:51:55'),
-(32, 't', '$2b$10$7JXXmZI8ib/GaOqW7f99.OU88qPFnt0N9odkZGPHb/GUany24x/l.', 'patient', 1, '2024-11-04 22:02:48'),
-(33, 'tt', '$2b$10$ZpzgXUT/74OkviPmxNgaX.gsy/QtCADHejQjAJ4NHykM5/WEeQTqa', 'patient', 1, '2024-11-07 22:31:36'),
-(34, '1', '$2b$10$NZfWzqrijcwzwRywwIqIV.JQOK4WtfeOu5q4Zh5twZL.l8hne9.0i', 'patient', 1, '2024-11-09 04:19:39'),
-(35, '12', '$2b$10$O6frTyFCkxv/4Z5Hivfxw.982sObTPzeKcKaAbXF/gaW/Zjy2IOzu', 'patient', 1, '2024-11-14 19:51:12'),
-(36, '123', '$2b$10$Av6fPnzbm3P.CX.qXsWLb.yQNP0OsiOMckihrTPWPtEiiw2f6HEIi', 'patient', 1, '2024-11-14 19:52:12'),
-(37, '1234', '$2b$10$BexV6CGBnvxK3Z0fdh7vYO1LFrvcxdOIELLeCpn3UZDxA.LxlkOLi', 'patient', 1, '2024-11-14 19:54:31'),
-(42, 'khanh', '$2b$10$1ygjfvoBs6RVzL5Re.jG7eEzEq2OySd9h0pole1H9r7YhbaXN.Eai', 'doctor', 1, '2024-11-16 23:54:22');
+(26, 'drduc', '$2b$10$1TUmHnXWxOCRhpiGTwJQM.GQGhzdgd2VuxqXaBEb0iha7UilZyENW', 'doctor', 1, '2024-11-04 21:34:20'),
+(32, 'tuoinguyen', '$2b$10$7JXXmZI8ib/GaOqW7f99.OU88qPFnt0N9odkZGPHb/GUany24x/l.', 'patient', 1, '2024-11-04 22:02:48'),
+(43, 'tuoi1', '$2b$10$ViguuH5Amt.DzsK8hOoNf.cico/6F4mtQ3eip7UhfX9u.zYcVxs9u', 'patient', 1, '2024-11-18 18:24:58'),
+(46, 'ngocloi', '$2b$10$XS79R3u9gjaPR9e97T3sU.7jcW5c7IF/Zec6u3nJeG27RIvlnoN/K', 'patient', 1, '2024-11-18 19:35:01'),
+(52, 'tuoi', '$2b$10$tSEoRKPmGeEPfpU/d7YimuT2ebjRRwhEau8w5BlP6R/.eMfPO58jO', 'doctor', 1, '2024-11-22 14:20:04');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -328,9 +391,7 @@ ALTER TABLE `follow_up_appointments`
 -- Chỉ mục cho bảng `medical_records`
 --
 ALTER TABLE `medical_records`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `patient_id` (`patient_id`),
-  ADD KEY `doctor_id` (`doctor_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `patients`
@@ -361,13 +422,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `booking_appointments`
 --
 ALTER TABLE `booking_appointments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT cho bảng `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT cho bảng `follow_up_appointments`
@@ -379,25 +440,25 @@ ALTER TABLE `follow_up_appointments`
 -- AUTO_INCREMENT cho bảng `medical_records`
 --
 ALTER TABLE `medical_records`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT cho bảng `specialties`
 --
 ALTER TABLE `specialties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -408,13 +469,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `follow_up_appointments`
   ADD CONSTRAINT `follow_up_appointments_ibfk_1` FOREIGN KEY (`doctor_id`) REFERENCES `doctors` (`id`);
-
---
--- Các ràng buộc cho bảng `medical_records`
---
-ALTER TABLE `medical_records`
-  ADD CONSTRAINT `medical_records_ibfk_1` FOREIGN KEY (`patient_id`) REFERENCES `patients` (`id`),
-  ADD CONSTRAINT `medical_records_ibfk_2` FOREIGN KEY (`doctor_id`) REFERENCES `doctors` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

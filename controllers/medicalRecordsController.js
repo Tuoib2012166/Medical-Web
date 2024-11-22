@@ -5,6 +5,7 @@ function formatQuery(query, params) {
 }
 
 exports.getMedicalRecords = async (req, res) => {
+    const { patient_id } = req.query;
     try {
         const query = `
             SELECT
@@ -14,11 +15,29 @@ exports.getMedicalRecords = async (req, res) => {
                 doctors.fullname AS doctor_name,
                 medical_records.diagnosis,
                 medical_records.treatment,
-                medical_records.record_date
+                medical_records.record_date,
+                patients.address,
+                patients.phone,
+                patients.id as patient_id,
+                patients.fullname,
+                s.price,
+                s.name as service_name,
+                s.price as unit_price,
+                medical_records.quantity,
+                (s.price * medical_records.quantity) as total_price,
+                medical_records.specialty
+
             FROM medical_records
                      JOIN patients ON medical_records.patient_id = patients.id
                      JOIN doctors ON medical_records.doctor_id = doctors.id
+                     left JOIN services s on s.id = medical_records.service_id
+                     left JOIN specialties ck on ck.id = medical_records.specialty
+            WHERE TRUE
         `;
+
+        // if (patient_id) {
+        //     query += ` AND medical_records.patient_id = ${patient_id}`
+        // }
         console.log('Executing query:', query);
 
         const [medicalRecords,] = await db.query(query);
@@ -36,11 +55,11 @@ exports.getMedicalRecords = async (req, res) => {
 };
 
 exports.addMedicalRecord = async (req, res) => {
-    const { patient_id, doctor_id, diagnosis, treatment } = req.body;
-    console.log('Received data:', { patient_id, doctor_id, diagnosis, treatment });
+    const { patient_id, doctor_id, diagnosis, treatment, specialty, service: service_id, quantity } = req.body;
+
     try {
-        const query = 'INSERT INTO medical_records (patient_id, doctor_id, diagnosis, treatment) VALUES (?, ?, ?, ?)';
-        const params = [patient_id, doctor_id, diagnosis, treatment];
+        const query = 'INSERT INTO medical_records (patient_id, doctor_id, diagnosis, treatment, specialty, service_id, quantity) VALUES (?, ?, ?, ?, ?, ?, ?)';
+        const params = [patient_id, doctor_id, diagnosis, treatment, specialty, service_id, quantity];
         console.log('Executing query:', formatQuery(query, [...params]));
 
         await db.query(query, params);
