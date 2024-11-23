@@ -132,3 +132,40 @@ exports.deletePatient = async (req, res) => {
         connection.release();
     }
 };
+
+exports.getPatientById = async (req, res) => {
+    const patientId = req.params.id;  // Lấy ID từ params
+    console.log("Get patient by ID request received", patientId);
+    
+    try {
+        const selectPatientSql = `
+            SELECT
+                p.id,
+                u.username,
+                u.role,
+                u.status,
+                u.created_at,
+                p.fullname,
+                p.phone,
+                p.address,
+                p.gender,
+                p.birth_year
+            FROM
+                patients p
+            LEFT JOIN
+                users u ON p.user_id = u.id
+            WHERE p.id = ?
+        `;
+        const [patient] = await db.query(selectPatientSql, [patientId]);
+
+        if (patient.length > 0) {
+            console.log("Patient data retrieved", patient[0]);
+            return res.json(patient[0]);
+        } else {
+            return res.status(404).json({ message: "Patient not found" });
+        }
+    } catch (error) {
+        console.log("Failed to retrieve patient", error);
+        return res.status(500).json({ message: "An error occurred while fetching the patient" });
+    }
+};

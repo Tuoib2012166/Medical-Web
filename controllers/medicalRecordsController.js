@@ -5,62 +5,77 @@ function formatQuery(query, params) {
 }
 
 exports.getMedicalRecords = async (req, res) => {
-    const { patient_id } = req.query;
     try {
         const query = `
             SELECT
                 medical_records.id,
+                patients.id AS patient_id,
                 patients.fullname AS patient_name,
+                patients.address,
+                patients.phone,
+                CASE
+                    WHEN patients.gender = 'male' THEN 'Nam'
+                    WHEN patients.gender = 'female' THEN 'Nữ'
+                    ELSE 'Khác'
+                END AS gender,
+                patients.birth_year,
                 doctors.id AS doctor_id,
                 doctors.fullname AS doctor_name,
+                specialties.name AS specialty_name,
                 medical_records.diagnosis,
                 medical_records.treatment,
                 medical_records.record_date,
-                patients.address,
-                patients.phone,
-                patients.id as patient_id,
-                patients.fullname,
-                s.price,
-                s.name as service_name,
-                s.price as unit_price,
+                services.name AS service_name,
                 medical_records.quantity,
-                (s.price * medical_records.quantity) as total_price,
-                medical_records.specialty
-
+                medical_records.unit_price,
+                medical_records.total_price,
+                medical_records.prescription
             FROM medical_records
-                     JOIN patients ON medical_records.patient_id = patients.id
-                     JOIN doctors ON medical_records.doctor_id = doctors.id
-                     left JOIN services s on s.id = medical_records.service_id
-                     left JOIN specialties ck on ck.id = medical_records.specialty
-            WHERE TRUE
+                JOIN patients ON medical_records.patient_id = patients.id
+                JOIN doctors ON medical_records.doctor_id = doctors.id
+                JOIN specialties ON doctors.specialty = specialties.id
+                JOIN services ON medical_records.service = services.id
         `;
-
-        // if (patient_id) {
-        //     query += ` AND medical_records.patient_id = ${patient_id}`
-        // }
-        console.log('Executing query:', query);
-
-        const [medicalRecords,] = await db.query(query);
-        console.log('Query result:', medicalRecords);
-
-        // Parse the services field from JSON string to array
-        // medicalRecords.forEach(record => {
-        //     record.services = JSON.parse(record.services);
-        // });
-
+        const [medicalRecords] = await db.query(query);
         res.json(medicalRecords);
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch medical records' });
     }
 };
 
+
 exports.addMedicalRecord = async (req, res) => {
-    const { patient_id, doctor_id, diagnosis, treatment, specialty, service: service_id, quantity } = req.body;
+    const {
+        patient_id, doctor_id, diagnosis, treatment,
+        record_date, address, phone, gender, birth_year,
+        specialty, service, quantity, unit_price,
+        total_price, prescription
+    } = req.body;
+
+    console.log('Received data:', {
+        patient_id, doctor_id, diagnosis, treatment,
+        record_date, address, phone, gender, birth_year,
+        specialty, service, quantity, unit_price,
+        total_price, prescription
+    });
 
     try {
-        const query = 'INSERT INTO medical_records (patient_id, doctor_id, diagnosis, treatment, specialty, service_id, quantity) VALUES (?, ?, ?, ?, ?, ?, ?)';
-        const params = [patient_id, doctor_id, diagnosis, treatment, specialty, service_id, quantity];
-        console.log('Executing query:', formatQuery(query, [...params]));
+        const query = `
+            INSERT INTO medical_records (
+                patient_id, doctor_id, diagnosis, treatment,
+                record_date, address, phone, gender, birth_year,
+                specialty, service, quantity, unit_price,
+                total_price, prescription
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        `;
+        const params = [
+            patient_id, doctor_id, diagnosis, treatment,
+            record_date, address, phone, gender, birth_year,
+            specialty, service, quantity, unit_price,
+            total_price, prescription
+        ];
+
+        console.log('Executing query:', query, params);
 
         await db.query(query, params);
         return res.json({ message: 'Medical record added successfully' });
@@ -69,6 +84,7 @@ exports.addMedicalRecord = async (req, res) => {
         res.status(500).json({ error: 'Failed to add medical record', details: error.message });
     }
 };
+
 
 exports.updateMedicalRecord = async (req, res) => {
     const { id } = req.params;

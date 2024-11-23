@@ -9,7 +9,7 @@ exports.getAllFollowUpAppointments = async (req, res) => {
                 f.id,
                 f.patient_name as patient_id,
                 f.follow_up_date,
-                -- f.time,
+                f.time,
                 f.notes,
                 f.doctor_id,
                 d.fullname AS doctor_name,
