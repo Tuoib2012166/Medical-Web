@@ -14,8 +14,8 @@ exports.getMedicalRecords = async (req, res) => {
                 patients.address,
                 patients.phone,
                 CASE
-                    WHEN patients.gender = 'male' THEN 'Nam'
-                    WHEN patients.gender = 'female' THEN 'Nữ'
+                    WHEN medical_records.gender = 'male' THEN 'Nam'
+                    WHEN medical_records.gender = 'female' THEN 'Nữ'
                     ELSE 'Khác'
                 END AS gender,
                 patients.birth_year,
@@ -52,13 +52,9 @@ exports.addMedicalRecord = async (req, res) => {
         total_price, prescription
     } = req.body;
 
-    console.log('Received data:', {
-        patient_id, doctor_id, diagnosis, treatment,
-        record_date, address, phone, gender, birth_year,
-        specialty, service, quantity, unit_price,
-        total_price, prescription
-    });
+    const date = new Date(record_date);
 
+    const formattedDate = date.toISOString().slice(0, 19).replace('T', ' ');
     try {
         const query = `
             INSERT INTO medical_records (
@@ -70,7 +66,7 @@ exports.addMedicalRecord = async (req, res) => {
         `;
         const params = [
             patient_id, doctor_id, diagnosis, treatment,
-            record_date, address, phone, gender, birth_year,
+            formattedDate, address, phone, gender, birth_year,
             specialty, service, quantity, unit_price,
             total_price, prescription
         ];

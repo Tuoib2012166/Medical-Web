@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 22, 2024 lúc 02:25 PM
+-- Thời gian đã tạo: Th10 24, 2024 lúc 04:53 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -48,61 +48,7 @@ CREATE TABLE `booking_appointments` (
 --
 
 INSERT INTO `booking_appointments` (`id`, `fullname`, `phone`, `address`, `gender`, `birth_year`, `appointment_date`, `appointment_time`, `doctor_id`, `content`, `created_at`, `status`, `user_id`) VALUES
-(1, 'Mai Hiếu', '0862355036', '56/1 Đường số 5 Phường Bình Trưng Tây TP Thủ Đức TP Hồ Chí Minh', 'Nam', 1996, '2005-02-17', '11:11:00', 1, 'g', '2024-11-02 14:38:20', 'accept', NULL),
-(2, 'hhh', '0938444666', 'fgjggf', 'Nam', 1995, '2024-11-04', '00:00:00', 1, 'xgjn', '2024-11-04 08:03:46', 'accept', NULL),
-(3, 'Mai Hiếu', '0938444666', 'sdgf', 'Nam', 1995, '2024-11-30', '02:45:00', 2, 'hvk', '2024-11-04 11:42:32', 'reject', NULL),
-(4, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 1999, '2024-11-04', '11:43:00', 2, '123', '2024-11-04 11:43:20', 'reject', NULL),
-(5, 'h', '0938444666', 'dhxt', 'Nam', 1996, '2024-11-21', '01:57:00', 4, 'ghkj', '2024-11-04 11:55:40', 'pending', NULL),
-(6, 'Mai Hiếu', '0938444666', 'ghjk,', 'Nam', 1995, '2024-11-21', '01:57:00', 4, 'hkmhfvgkm', '2024-11-04 12:32:53', 'pending', NULL),
-(7, 'Mai Hiếu', 'tj', '56/1 Đường số 5 Phường Bình Trưng Tây TP Thủ Đức TP Hồ Chí Minh', 'Nam', 1994, '2024-11-14', '18:21:00', 2, 'gku', '2024-11-04 14:17:17', 'accept', NULL),
-(8, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 1999, '2024-11-04', '17:07:00', 1, '1231412', '2024-11-04 17:07:04', 'accept', NULL),
-(9, 'Tươi Nguyễn hhh', '0386812934', 'tranhungdao', 'Nam', 1999, '2024-11-05', '17:22:00', 2, '112312312', '2024-11-04 17:22:48', 'reject', NULL),
-(10, 'Tươi Nguyễn hhh', '0386812934', 'tranhungdao', 'Nam', 1999, '2024-11-04', '17:30:00', 2, '1231231', '2024-11-04 17:26:42', 'reject', NULL),
-(11, 'Tươi Nguyễn hhh', '0386812934', 'tranhungdao', 'Nam', 1999, '2024-11-05', '17:30:00', 5, '1231231', '2024-11-04 17:30:12', 'reject', NULL),
-(12, 'Tươi Nguyễn hhhdsa', '0386812934', 'tranhungdao', 'Nam', 1999, '2024-11-04', '17:31:00', 5, 'asdasdasdas', '2024-11-04 17:31:53', 'accept', NULL),
-(13, 'Tươi Nguyễn hhhdsa', '0386812934', 'tranhungdao', 'Nam', 1999, '2024-11-04', '17:31:00', 5, 'asdasdasdas', '2024-11-04 17:31:54', 'reject', NULL),
-(14, 'rdhf', '0938444666', 'sr', 'Nam', 1995, '2024-11-08', '17:50:00', 1, 'ghbjk,', '2024-11-04 17:45:49', 'accept', 15),
-(15, 'Tươi Nguyễn hh', '0386812934', 'tranhungdao', 'Nam', 1999, '2024-11-06', '18:01:00', 5, '123123', '2024-11-04 18:01:17', 'accept', 14),
-(16, 'Nguyễn Trần Ngọc Tươi', '0123456789', 'thf', 'Nam', 1999, '2024-11-06', '19:42:00', 6, '1231231231231231', '2024-11-04 19:42:56', 'accept', 5),
-(17, 'Nguyễn Tươi', '1686812933', 'Ang Gianb', 'Nam', 2000, '2024-11-06', '11:18:00', 9, '123123', '2024-11-04 22:18:02', 'accept', 22),
-(18, 'Nguyễn Tươi', '1686812933', 'Ang Gianb', 'Nam', 2002, '2024-11-05', '10:37:00', 8, '213123', '2024-11-04 22:37:09', 'accept', 0),
-(19, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-08', '16:01:00', 5, 'okok', '2024-11-08 15:01:11', 'accept', 22),
-(20, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-08', '16:01:00', 1, 'ko okok', '2024-11-08 15:01:38', 'reject', 0),
-(21, 'TT Nguyễn', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-08', '16:04:00', 2, 'okok', '2024-11-08 15:03:32', 'accept', 22),
-(22, 'TT Nguyễn', '0386812933', 'tranhungdao 111', '', 1999, '2024-11-08', '16:04:00', 2, 'okokoko', '2024-11-08 15:03:48', 'pending', 0),
-(23, 'TT Nguyễn', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-08', '16:06:00', 8, 'okokok', '2024-11-08 15:05:23', 'accept', 23),
-(24, 'TT Nguyễn', '0386812933', 'tranhungdao 111', '', 1999, '2024-11-08', '16:06:00', 8, 'akkakaka', '2024-11-08 15:05:37', 'reject', 0),
-(25, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-18', '10:00:00', 8, 'ádasdas', '2024-11-08 15:12:58', 'accept', 23),
-(26, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-08', '15:13:00', 8, '1231231', '2024-11-08 15:13:24', 'reject', 23),
-(27, 'Nguyễn Tươi 1234', '1686812933', 'Ang Gianb', 'Nam', 2000, '2024-11-09', '10:30:00', 8, '123', '2024-11-09 09:30:36', 'pending', 22),
-(28, 'Nguyen Tran Ngoc Tuoi 123', '1686812933', 'tranhungdao', 'Nam', 2000, '2024-11-11', '21:00:00', 8, '123', '2024-11-09 09:36:20', 'accept', 22),
-(29, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-11', '23:11:00', 2, '123', '2024-11-11 23:11:52', 'pending', 22),
-(30, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-11', '23:54:00', 1, '123', '2024-11-11 23:54:38', 'reject', 0),
-(31, '1', '1', '1', 'Nam', 1999, '2024-11-16', '20:44:00', 1, 'ádasd', '2024-11-16 20:44:58', 'pending', 0),
-(32, 'Nguyễn Tươi', '1686812933', 'Ang Gianb', 'Nam', 1999, '2024-11-16', '20:45:00', 9, '123', '2024-11-16 20:45:26', 'pending', 0),
-(33, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-17', '23:51:00', 1, 'OK', '2024-11-17 23:51:35', 'pending', 0),
-(34, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-17', '23:53:00', 5, '12', '2024-11-17 23:53:23', 'pending', 0),
-(35, 'Tươi Nguyễn', '0386812933', 'tranhungdao', '', 2000, '2024-11-19', '12:12:00', 8, '123', '2024-11-17 23:53:57', 'pending', 0),
-(36, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-18', '23:00:00', 8, '123', '2024-11-17 23:57:10', 'pending', 0),
-(37, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-17', '23:59:00', 8, '123', '2024-11-17 23:59:55', 'pending', 8),
-(38, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-18', '00:03:00', 8, '123', '2024-11-18 00:03:20', 'pending', 8),
-(39, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-18', '00:04:00', 8, '123', '2024-11-18 00:04:23', 'pending', 8),
-(40, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-18', '00:06:00', 2, '123', '2024-11-18 00:05:59', 'pending', 8),
-(41, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-19', '11:11:00', 8, '123', '2024-11-18 00:07:26', 'pending', 0),
-(42, 'Tươi Nguyễn', '0386812933', 'tranhungdao', 'Nam', 2000, '2024-11-19', '12:31:00', 10, '123', '2024-11-18 00:07:42', 'pending', 0),
-(43, 'Nguyễn Trần Ngọc Tươi 123', '0386812933', 'tranhungdao 111', 'Nam', 2000, '2024-11-19', '11:00:00', 8, 'asd', '2024-11-18 00:26:16', 'pending', 0),
-(44, 'Nguyễn Trần Ngọc Tươi 1234', '0386812933', 'tranhungdao 111', 'Nam', 2000, '2024-11-18', '09:00:00', 8, 'asd', '2024-11-18 00:35:55', 'pending', 0),
-(45, 'Nguyen Tran Ngoc Tuoi', '0686812933', 'tranhungdao', 'Nam', 1999, '2024-11-18', '08:00:00', 2, '8h', '2024-11-18 10:52:11', 'pending', 22),
-(46, 'Nguyen Tran Ngoc Tuoi', '0686812933', 'tranhungdao', 'Nam', 1999, '2024-11-18', '08:00:00', 1, '123', '2024-11-18 11:28:38', 'reject', 22),
-(47, 'Nguyen Tran Ngoc Tuoi', '0686812933', 'tranhungdao', 'Nam', 1999, '2024-11-18', '08:00:00', 12, '8h', '2024-11-18 11:41:52', 'pending', 22),
-(48, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 'Nam', 2000, '2024-11-18', '08:00:00', 12, '12', '2024-11-18 11:42:52', 'reject', 0),
-(49, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao', 'Nam', 1999, '2024-11-20', '12:00:00', 8, '123', '2024-11-18 22:43:45', 'pending', 22),
-(50, 'Nguyễn Ngọc Lợi', '0975263989', 'An Giang', 'Nam', 1999, '2024-11-19', '09:00:00', 11, 'ok', '2024-11-19 02:50:10', 'accept', 30),
-(51, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao', 'Nam', 1999, '2024-11-20', '10:00:00', 11, '123', '2024-11-19 09:46:01', 'accept', 22),
-(52, 'Nguyễn Ngọc Lợi', '0975263989', 'An Giang', 'Nam', 1999, '2024-11-22', '12:00:00', 11, 'ok', '2024-11-22 00:33:41', 'reject', 30),
-(53, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao', 'Nam', 1999, '2024-11-22', '13:00:00', 11, '123', '2024-11-22 00:55:57', 'pending', 22),
-(54, 'Anh Thu', '0686812933', 'tranhungdao', 'Nam', 2000, '2024-11-23', '11:00:00', 11, '123', '2024-11-22 00:56:31', 'pending', 0),
-(55, 'Nguyễn Ngọc Lợi', '0975263989', 'An Giang', 'Nam', 1999, '2024-11-22', '13:00:00', 8, '123', '2024-11-22 20:07:01', 'reject', 30);
+(1, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 'Nam', 1999, '2024-11-23', '10:00:00', 24, '123', '2024-11-23 01:39:44', 'pending', 1);
 
 -- --------------------------------------------------------
 
@@ -133,10 +79,17 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`id`, `user_id`, `fullname`, `phone`, `address`, `gender`, `birth_year`, `introduction`, `biography`, `certifications`, `main_workplace`, `working_hours`, `specialty`, `created_at`, `image`) VALUES
-(1, 5, 'BS.Đinh Ngọc Khánh', '0123456788', 'Cần Thơ', 0, 1999, 'Bác sĩ Đinh Ngọc Khánh được đào tạo chuyên sâu về tiểu phẫu, implant, với khả năng sử dụng thành thạo các thiết bị công nghệ cao trong nha khoa, các kỹ thuật chuyên sâu trong cấy ghép implant. Với nhiều năm kinh nghiệm khám, tư vấn và điều trị trong ngành nha khoa, bác sĩ Khánh luôn đặt yếu tố an toàn – chính xác lên chất lượng, đưa đến cho khách hàng những trải nghiệm an toàn, hiệu quả nhất.', 'Năm 2018 – 2020: Công tác tại bệnh viện Hữu Nghị Việt Nam – Cuba Hà Nội\r\n\r\nNăm 2020 – 2021: Công tác tại nha khoa Bảo Việt Hà Nội\r\n\r\nNăm 2021 – 2023: Công tác tại nha khoa Việt Smile', 'Chứng chỉ implant Viện đào tạo Răng – Hàm – Mặt – Đại học Y Hà Nội\r\nChứng nhận Thực hành về phẫu thuật tăng thể tích xương -nâng xoang trong implant\r\nHội thảo Cách mạng mới trong implant – Bệnh viện Răng Hàm Mặt TP.HCM', 'Cần Thơ', '1', '2', '2024-11-01 08:56:07', 'uploads\\1730730668422-bac-si-dinh-ngoc-khanh-2.png'),
-(5, 17, 'BS.Lê Thị Hoài Anh', '0386812933', 'Cần Thơ', 1, 2000, NULL, NULL, NULL, NULL, NULL, '5', '2024-11-04 17:27:34', 'uploads\\1730730820419-400-1.png'),
-(8, 26, 'BS.Đỗ Văn Đức', '0123456789', 'Cần Thơ', 0, 2000, '123', '123123', '1231', 'Cần Thơ', '12', '1', '2024-11-04 21:34:20', 'uploads\\1730730860271-bs-duc.png'),
-(23, 52, 'Nguyen Tran Ngoc Tuoi', '0686812933', 'tranhungdao', 0, 2000, '123', '123', '123', 'Cần Thơ', '10h 12h', '10', '2024-11-22 14:20:04', 'uploads\\1732260003997-bs_bkhanh.png');
+(24, 3, 'BS.Đinh Ngọc Khánh', '0123456789', 'Cần Thơ', 0, 1999, 'Bác sĩ Đinh Ngọc Khánh được đào tạo chuyên sâu về tiểu phẫu, implant, với khả năng sử dụng thành thạo các thiết bị công nghệ cao trong nha khoa, các kỹ thuật chuyên sâu trong cấy ghép implant. Với nhiều năm kinh nghiệm khám, tư vấn và điều trị trong ngành nha khoa, bác sĩ Khánh luôn đặt yếu tố an toàn – chính xác lên chất lượng, đưa đến cho khách hàng những trải nghiệm an toàn, hiệu quả nhất.', 'Năm 2018 – 2020: Công tác tại bệnh viện Hữu Nghị Việt Nam – Cuba Hà Nội\r\n\r\nNăm 2020 – 2021: Công tác tại nha khoa Bảo Việt Hà Nội\r\n\r\nNăm 2021 – 2023: Công tác tại nha khoa Việt Smile', 'Chứng chỉ implant Viện đào tạo Răng – Hàm – Mặt – Đại học Y Hà Nội\r\nChứng nhận Thực hành về phẫu thuật tăng thể tích xương -nâng xoang trong implant\r\nHội thảo Cách mạng mới trong implant – Bệnh viện Răng Hàm Mặt TP.HCM', 'Cần Thơ', '8:00 - 17:00', '1', '2024-11-23 01:26:25', 'uploads\\1732299985853-bs_khanh.png'),
+(25, 4, 'BS.Mai Thị Trang', '0123456789', 'Cần Thơ', 1, 1999, 'Bác sĩ Mai Thị Trang là bác sĩ chỉnh nha được đánh giá là người luôn tận tâm, chu đáo, luôn đặt yếu tố sức khỏe khách hàng lên hàng đầu. Đó cũng là lý do bác sĩ Mai Trang đã được khách hàng tín nhiệm, trao gửi nụ cười của mình. Với sự thành công của nhiều case niềng răng do bác sĩ Mai Trang thực hiện, bạn hoàn toàn có thể an tâm lựa chọn bác sĩ làm người bạn đồng hành trên con đường tìm đến cái đẹp.', 'Năm 2021 – nay: Công tác tại Hệ thống Nha khoa VIET SMILE', 'Chứng chỉ chỉnh nha hay phẫu thuật ở bệnh nhân có sai hình xương\r\nChứng chỉ kiểm soát torque với mắc cài kim loại tự buộc\r\nChứng nhận tham gia Hội thảo Điều trị chỉnh nha sớm của Bệnh viện Răng hàm mặt Trung Ương\r\nChứng chỉ khóa học “Sinh cơ học chỉnh nha – Từ lý thuyết cốt lõi đến ứng dụng lâm sàng” – GS. Kwangchul Choy', 'Cần Thơ', '8:00 - 17:00', '2', '2024-11-23 01:28:36', 'uploads\\1732300116515-bs_trang.png'),
+(26, 5, 'BS.Lê Thị Hoài Anh', '0123456789', 'Cần Thơ', 1, 2000, 'Bác sĩ Lê Thị Hoài Anh là bác sĩ chuyên sâu trong lĩnh vực chỉnh nha, có nhiều năm kinh nghiệm. Sự tận tâm và nhiệt tình của bác sĩ Hoài Anh đã thu hút sự tin tưởng của nhiều khách hàng, cùng với sự chuyên nghiệp và sự nhẹ nhàng, hỗ trợ tận tình mà bác sĩ luôn mang đến. Với hàng nghìn khách hàng đã trải qua liệu trình điều trị của bác sĩ Hoài Anh, họ đã có được nụ cười mới, với hàm răng đều đẹp và rất hài lòng với quá trình niềng răng cũng như kết quả của mình.', 'Năm 2020 – 2021: Thực hành tại Bệnh viện Đại học Y Hà Nội\r\nNăm 2021 – nay: BS chỉnh nha tại hệ thống Nha khoa VIET SMILE', 'Chứng chỉ Điều trị chỉnh nha dựa trên nguyên tắc sinh học và kiểm soát mặt phẳng nha ba chiều – MEAW Technique\r\nChưng chỉ chỉnh nha trong suốt Invissalign tập đoàn Align\r\nChứng chỉ Khóa học về Phương pháp bẻ dây với kỹ thuật Geaw – GS Shirasu\r\nChứng chỉ đào tạo liên tục “Cuộc cách mạng của MSE trong điều trị hẹp XHT và các ứng dụng nâng cao ở người trưởng thành” – GS. Won Moon\r\nChứng nhận “Sinh cơ học Chỉnh nha” – GS Kwangchul Choy\r\nChứng nhận “Chỉnh nha cho trẻ em đang tăng trưởng” – Prof. Enrique Garcia Romero', 'Cần Thơ', '8:00 - 17:00', '3', '2024-11-23 01:29:40', 'uploads\\1732300180778-bs_anh.png'),
+(27, 6, 'BS.Đỗ Văn Đức', '0123456789', 'Cần Thơ', 0, 2000, 'Bác sĩ Đỗ Văn Đức là bác sĩ được đào tạo chuyên sâu về tiểu phẫu, implant, có khả năng sử dụng thành thạo những công nghệ, kỹ thuật tiên tiến nhất. Với kinh nghiệm và sự tận tâm của mình bác sĩ Đức đã mang lại hàm răng khỏe mạnh cho khách hàng và nhận được nhiều đánh giá tích cực.', 'Năm 2015 – 2021: Học bác sĩ chuyên khoa Răng – Hàm – Mặt, Đại học Y Dược Thái Nguyên.\r\n\r\nNăm 2021- nay: Công tác tại nha khoa VIET SMILE.', 'Chứng chỉ implant K27\r\nChứng nhận tham gia hội thảo: Điều trị tuỷ lại và xử lý các trường hợp phức tạp trong nội nha Dr Moh’d Hammo\r\nChứng nhận tham gia khoá học: Thực hành trám răng thẩm mỹ\r\nChứng nhận tham gia khoá học: Nội nha thực chiến TS.Nguyễn Quang Tâm\r\nChứng nhận tham gia hội thảo: Ứng dụng lâm sàng nâng cao của phẫu thuật laser Diode\r\nChứng nhận tham gia hội nghị: Khoa học và triển lãm RHM quốc tế VIDEC 2023', 'Cần Thơ', '8:00 - 17:00', '10', '2024-11-23 01:30:30', 'uploads\\1732300230412-bs_duc.png'),
+(28, 7, 'BS.Phạm Ngọc Quốc', '0123456789', 'Cần Thơ', 0, 2000, 'Bác sĩ Phạm Ngọc Quốc hiện đang công tác tại nha khoa Viet Smile – là bác sĩ chuyên sâu về tiểu phẫu – phục hình – implant. Với kinh nghiệm và sự tận tâm, chuyên nghiệp, chu đáo, bác sĩ Ngọc Quốc đã mang đến cho khách hàng sự an tâm, tin tưởng, cảm thấy thoải mái, đạt hiệu quả cao nhất khi điều trị. Bác sĩ Ngọc Quốc luôn không ngừng nâng cao trình độ chuyên môn, ứng dụng công nghệ hiện đại vào quá trình thực hiện để giúp khách hàng có trải nghiệm dịch vụ chất lượng nhất.', 'Năm 2019 – 2023: Công tác tại nha khoa Lucci\r\n\r\nNăm 2021 – 2022: Thực hành tại Bệnh viện Đại học Y Hà Nội\r\n\r\nNăm 2023 – nay: Công tác tại Nha khoa Viet Smile', 'Chứng chỉ Cấy ghép implant nha khoa\r\nChứng chỉ kiểm soát nhiễm khuẩn bệnh viện, nha khoa', 'Cần Thơ', '8:00 - 17:00', '4', '2024-11-23 01:31:08', 'uploads\\1732300268803-bs_quoc.png'),
+(29, 8, 'BS.Nguyễn Gia Bảo Khánh', '0123456789', 'Cần Thơ', 0, 2000, 'Bác sĩ Nguyễn Gia Bảo Khánh – Tốt nghiệp Chuyên khoa Răng Hàm Mặt, Trường Đại học Y Dược Cần Thơ. Với kinh nghiệm hơn 4 năm hoạt động trong lĩnh vực niềng răng và chỉnh nha chuyên sâu. Không chỉ có kỹ năng tốt, bác sĩ Nguyễn Gia Bảo Khánh còn thường xuyên tham gia các khóa học để nâng cao trình độ, kiến thức cho bản thân nhằm mang lại kết quả tốt nhất cho khách hàng. Với phong cách làm việc chuyên nghiệp và sự tận tâm với sức khỏe răng miệng của từng khách hàng. Bác sĩ Nguyễn Gia Bảo Khánh đã nhận được sự tín nhiệm và lòng tin từ rất nhiều khách hàng, và trở thành sự lựa chọn hàng đầu cho việc chăm sóc răng miệng và mang đến nụ cười hoàn hảo.', 'Năm 2021 – nay: Công tác tại Hệ thống Nha Khoa Việt Smile.', 'Chứng chỉ Chẩn đoán và lập kế hoạch điều trị chỉnh nha lâm sàng (Bệnh viện Răng Hàm Mặt Hồ Chí Minh)\r\nChứng chỉ Điều trị chỉnh nha dựa trên sinh học và kiểm soát mặt phẳng nhai theo 3 chiều không gian – Giáo sư Enrique García Romero\r\nChứng chỉ Kỹ thuật dây cung thẳng liên tục (Tổ chức Ortho Organizers)\r\nChứng nhận Khóa học Chỉnh nha với khay trong suốt\r\nChứng nhận đào tạo liên tục Chỉnh nha thời đại mới – Thách thức và xu hướng\r\nChứng chỉ khóa học “Sinh cơ học chỉnh nha – Từ lý thuyết cốt lõi đến ứng dụng lâm sàng” – GS. Kwangchul Choy', 'Cần Thơ', '8:00 - 17:00', '5', '2024-11-23 01:31:50', 'uploads\\1732300310099-bs_bkhanh.png'),
+(30, 9, 'BS.Đặng Thị Hà Xuyên', '0123456789', 'Cần Thơ', 0, 2000, 'Hiện tại, Bác sĩ Xuyên đang làm việc tại chuyên khoa Chỉnh nha tại Hệ thống Nha khoa Viet Smile. Bác sĩ Xuyên là người đã mang lại rất nhiều sự an tâm, giúp khách hàng kiên trì trong suốt hành trình niềng răng của mình. Khách hàng tới thăm kháng niềng răng, điều trị nha khoa tổng quát đều nhận xét bác sĩ vô cùng ân cần, kĩ càng và kiên nhẫn lắng nghe mong muốn của họ, dựa trên các dữ liệu đã thu thập được cùng chuyên môn, kinh nghiệm của mình để lên phác đồ điều trị 1 cách chính xác nhất.', 'Năm 2022 – nay: Công tác tại Nha khoa Việt Smile', 'Chứng nhận Chỉnh nha toàn diện SSO – Y Company\r\nChứng nhận tham gia Hội thảo “Điều trị chỉnh nha sớm”\r\nChứng chỉ khóa học “Sinh cơ học chỉnh nha – Từ lý thuyết cốt lõi đến ứng dụng lâm sàng” – GS. Kwangchul Choy\r\nChứng chỉ khóa học đào tạo liên tục “Chỉnh hình răng mặt – ĐH Y Hà Nội', 'Cần Thơ', '8:00 - 17:00', '6', '2024-11-23 01:32:37', 'uploads\\1732300357619-bs_xuyen.png'),
+(31, 10, 'BS.Nguyễn Hữu Tân', '0123456789', 'Cần Thơ', 0, 2000, 'Bác sĩ Nguyễn Hữu Tân là bác sĩ chuyên sâu về tiểu phẫu – phục hình – implant. Với nhiều năm kinh nghiệm trong nghề, bác sĩ Tân được các khách hàng đặt niềm tin và an tâm sử dụng dịch vụ, cải thiện tình trạng răng. Bác sĩ Tân có trình độ tay nghề cao, năng lực chẩn đoán chính xác, điều trị hiệu quả giúp khách hàng được khắc phục hoàn toàn những vấn đề như: đau, nhức, mất răng,…', 'Năm 2017 – 2022: Công tác tại nha khoa Trâu Quỳ\r\nNăm 2022 – nay: Công tác tại nha khoa Việt Smile', 'Chứng chỉ hành nghề số 045873/BYT-CCHN\r\n\r\nChứng chỉ implant Viện đào tạo Răng – Hàm – Mặt – Đại học Y Hà Nội', 'Cần Thơ', '8:00 - 17:00', '6', '2024-11-23 01:33:31', 'uploads\\1732300411426-bs_tan.png'),
+(32, 11, 'BS.CKI.Nguyễn Thị Hường', '0123456789', 'Cần Thơ', 1, 2000, 'Bác sĩ CKI Nguyễn Thị Hường là bác sĩ trưởng của hệ thống nha khoa Việt Smile. Bác sĩ có trình độ chuyên môn cao về lĩnh vực chỉnh nha, độ uy tín cao với nhiều năm kinh nghiệm. Với ý thức trách nhiệm, tận tụy, yêu nghề của mình, Bs. Nguyễn Thị Hường đã kết hợp với đội ngũ bác sĩ tại Nha Khoa Việt Smile xây dựng một phòng khám không chỉ chuẩn trang thiết bị hiện đại mà còn chuẩn về con người và phương pháp điều trị.', 'Năm 2016 – nay: Trưởng khoa Nắn chỉnh răng tại Nha khoa Việt Smile', 'Chứng chỉ ứng công nghệ GEAW vào niềng răng bởi Giáo sư Dr.Akiyoshi Shirasu\r\nChứng chỉ và account riêng do Invisalign – Niềng khay trong suốt cấp\r\nChứng chỉ chuyên sâu điều trị cắn hở hiệu quả và ổn định – GS.Tae-Woo Kim – Đại học Seoul\r\nChứng chỉ Thực hành mắc cài mặt lưỡi đa rãnh – Viện trưởng viện đào tạo Răng – Hàm – Mặt chứng nhận\r\nChứng chỉ điều trị sai khớp cắn hạng II và III với kỹ thuật Meaw – Dr. Nelson Oppermann – University of Illinois at Chicago United States\r\nChứng chỉ kiểm soát răng đơn – tổng thể và mô mềm với TADS – Prof. Kee Joon Lee – Department Of Orthodontics Yonsei University, Seoul, Korea\r\nChứng chỉ Điều trị chỉnh nha dựa trên sinh học và kiểm soát mặt phẳng nhai theo 3 chiều không gian – Giáo sư Enrique García Romero\r\nChứng nhận tham dự Hội nghị khoa học “Chỉnh nha thời đại mới: Thách thức và Xu hướng”\r\nChứng chỉ khóa học “Sinh cơ học chỉnh nha – Từ lý thuyết cốt lõi đến ứng dụng lâm sàng” – GS. Kwangchul Choy', 'Cần Thơ', '8:00 - 17:00', '7', '2024-11-23 01:35:13', 'uploads\\1732300512945-bac-si-nguyen-thi-huong.png'),
+(33, 12, 'BS.Ninh Quang Tùng', '0123', 'Cần Thơ', 0, 1999, 'Bác sĩ Ninh Quang Tùng là bác sĩ chuyên sâu chỉnh nha có nhiều kinh nghiệm thực tế và đã cải thiện được nụ cười cho rất nhiều khách hàng. Với phương châm làm việc hết mình, không ngừng học hỏi, bác sĩ Tùng ngày càng nâng cao trình độ tay nghề cũng như cập nhật thêm những kiến thức, phương pháp mới theo thời đại. Hiện tại, bác sĩ Tùng được rất nhiều người tin tưởng và lựa chọn để gắn bó trong cả quá trình niềng răng thay đổi nụ cười.', 'Năm 2020 – 2022: Thực hành tại khoa Răng – Hàm – Mặt bệnh viện Đại học Y Hà Nội.\r\n\r\nNăm 2021 – nay: Công tác tại Nha khoa Việt Smile', 'Chứng chỉ chỉnh nha – Đại học Y Hà Nội\r\nChứng chỉ Điều trị sai khớp cắn và loạn năng hệ thống sọ mặt với dây cung GUMMETAL của Giáo sư Roberto Velasquez Torres\r\nChứng chỉ Điều trị chỉnh nha dựa trên sinh học và kiểm soát mặt phẳng nhai theo 3 chiều không gian – Giáo sư Enrique García Romero\r\nChứng chỉ điều trị chỉnh nha chuyên nghiệp – Dr Nelson Oppermann\r\nChứng nhận Nguyên tắc thiết kế máng ổn định và điều trị ngừng thở khi ngủ với công nghệ 3D\r\nChứng chỉ Khóa học về Phương pháp bẻ dây với kỹ thuật Geaw – GS Shirasu\r\nChứng nhận khoá học: “Thực hành nâng cao về khay trong suốt Inhouse và mắc cài 2D mặt lưỡi” – Dr. Nicolas Salesse', 'Cần Thơ', '8:00 - 17:00', '8', '2024-11-23 01:36:55', 'uploads\\1732300614975-bs-tung.png'),
+(34, 13, 'BS.Lê Đức Thăng', '0123456789', 'Cần Thơ', 0, 2000, 'Bác sĩ Lê Đức Thăng tốt nghiệp Đại học Y Hà Nội, hiện đang công tác tại Nha khoa VIET SMILE và chuyên về tiểu phẫu – phục hình – implant.\r\n\r\nTrong suốt quá trình làm việc bác sĩ không ngừng trau dồi kiến thức, học hỏi kinh nghiệm để nâng cao trình độ chuyên môn và kỹ năng nghề nghiệp để mang đến sự hài lòng và yên tâm cho khách hàng. Nhờ đó bác sĩ Đức Thăng đã từng bước khẳng định tên tuổi của bản thân bằng các ca phục hình thành công, trong đó có nhiều ca phức tạp cùng với đó là sự tin tưởng của khách hàng.', 'Năm 2020 – 2022: Thực hành tại Bệnh viên Đa khoa Đồng Nai.\r\n\r\nNăm 2022 – nay: Công tác tại Hệ thống Nha Khoa Việt Smile.', 'Chứng chỉ Implant cơ bản – Bác sĩ Bùi Tùng\r\nChứng chỉ phục hình trên implant trung tâm Sagodent', 'Cần Thơ', '8:00 - 17:00', '9', '2024-11-23 01:38:16', 'uploads\\1732300696671-bac-si-le-duc-thang.png');
 
 -- --------------------------------------------------------
 
@@ -148,6 +101,7 @@ CREATE TABLE `follow_up_appointments` (
   `id` int(11) NOT NULL,
   `patient_name` varchar(255) NOT NULL,
   `follow_up_date` date NOT NULL,
+  `time` varchar(50) NOT NULL,
   `notes` text DEFAULT NULL,
   `doctor_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
@@ -157,13 +111,8 @@ CREATE TABLE `follow_up_appointments` (
 -- Đang đổ dữ liệu cho bảng `follow_up_appointments`
 --
 
-INSERT INTO `follow_up_appointments` (`id`, `patient_name`, `follow_up_date`, `notes`, `doctor_id`, `created_at`) VALUES
-(3, '3', '2024-11-05', '123', 1, '2024-11-04 06:06:42'),
-(4, '12', '2024-11-05', '123', 1, '2024-11-04 10:38:22'),
-(5, '15', '2024-11-19', 'tdhj', 1, '2024-11-04 10:57:04'),
-(6, '14', '2024-11-21', '1231', 5, '2024-11-04 11:02:10'),
-(7, '22', '2024-11-18', '1231', 1, '2024-11-07 15:20:38'),
-(8, '22', '2024-11-10', 'ok', 8, '2024-11-09 02:42:35');
+INSERT INTO `follow_up_appointments` (`id`, `patient_name`, `follow_up_date`, `time`, `notes`, `doctor_id`, `created_at`) VALUES
+(10, '1', '2024-11-25', '11:00', '123', 24, '2024-11-22 18:55:18');
 
 -- --------------------------------------------------------
 
@@ -185,8 +134,8 @@ CREATE TABLE `medical_records` (
   `specialty` varchar(255) DEFAULT NULL,
   `service` varchar(255) DEFAULT NULL,
   `quantity` int(11) DEFAULT NULL,
-  `unit_price` decimal(10,2) DEFAULT NULL,
-  `total_price` decimal(10,2) DEFAULT NULL,
+  `unit_price` varchar(50) DEFAULT NULL,
+  `total_price` varchar(255) DEFAULT NULL,
   `prescription` text DEFAULT NULL,
   `amount` int(11) DEFAULT NULL,
   `service_id` int(11) DEFAULT NULL,
@@ -198,12 +147,9 @@ CREATE TABLE `medical_records` (
 --
 
 INSERT INTO `medical_records` (`id`, `patient_id`, `doctor_id`, `diagnosis`, `treatment`, `record_date`, `address`, `phone`, `gender`, `birth_year`, `specialty`, `service`, `quantity`, `unit_price`, `total_price`, `prescription`, `amount`, `service_id`, `appointment_id`) VALUES
-(1, 0, 11, 'tốt', 'tốt', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 0, 11, 'xấu', 'xấu', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 28, 11, 'tốt', 'tốt', '2024-11-19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(7, 30, 11, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(8, 22, 11, '12', '123', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(9, 22, 8, '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(17, 1, 24, '123', '123', '2024-11-23', 'tranhungdao 111', '0386812933', 'male', 1999, 'Tẩy trắng răng', '22', 2, '', '6000000', '123', NULL, NULL, NULL),
+(18, 1, 24, 'ok', 'ok', '2024-11-23', 'tranhungdao 111', '0386812933', 'male', 1999, 'Bọc răng sứ', '23', 2, '', '8000000', 'ok', NULL, NULL, NULL),
+(19, 2, 24, '123', '123', '2024-11-24', 'tranhungdao 111', '0386812933', 'female', 1999, 'Cấy ghép implant', '7', 1, '', '15000000', '123', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -227,9 +173,8 @@ CREATE TABLE `patients` (
 --
 
 INSERT INTO `patients` (`id`, `user_id`, `fullname`, `phone`, `address`, `gender`, `birth_year`, `created_at`) VALUES
-(22, 32, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao', 0, 2000, '2024-11-04 22:02:48'),
-(28, 43, 'Nguyễn Ngọc Tân', '0386812944', '123', 0, 1999, '2024-11-18 18:24:58'),
-(30, 46, 'Nguyễn Ngọc Lợi', '0975263989', 'An Giang', 0, 1999, '2024-11-18 19:35:01');
+(1, 2, 'Nguyễn Trần Ngọc Tươi', '0386812933', 'tranhungdao 111', 1, 1999, '2024-11-23 01:22:09'),
+(2, 14, 'Nguyễn Thị Đẹp', '0386812933', 'tranhungdao', 0, 2000, '2024-11-23 01:41:14');
 
 -- --------------------------------------------------------
 
@@ -351,14 +296,20 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`, `status`, `created_at`) VALUES
-(1, 'admin', '$2b$12$ZHHNDLAHIAN2gMomEX4ps.ZeO5DGvkppvY9hXQjhmADE635R5iFYS', 'admin', 1, '2024-11-18 19:39:16'),
-(5, 'drkhanh', '$2b$10$MRA1BaB8GLgDgrmd1bZKtOehdSAcSHXiZ9qagSrTxj43C/tMyAMsO', 'doctor', 1, '2024-11-01 08:55:23'),
-(17, 'anh', '$2b$10$c8vsDk35ZjdaL0zjuIR2MenWobzNh3boQRPdS6K/VHkngb4tTwKjm', 'doctor', 1, '2024-11-04 17:27:34'),
-(26, 'drduc', '$2b$10$1TUmHnXWxOCRhpiGTwJQM.GQGhzdgd2VuxqXaBEb0iha7UilZyENW', 'doctor', 1, '2024-11-04 21:34:20'),
-(32, 'tuoinguyen', '$2b$10$7JXXmZI8ib/GaOqW7f99.OU88qPFnt0N9odkZGPHb/GUany24x/l.', 'patient', 1, '2024-11-04 22:02:48'),
-(43, 'tuoi1', '$2b$10$ViguuH5Amt.DzsK8hOoNf.cico/6F4mtQ3eip7UhfX9u.zYcVxs9u', 'patient', 1, '2024-11-18 18:24:58'),
-(46, 'ngocloi', '$2b$10$XS79R3u9gjaPR9e97T3sU.7jcW5c7IF/Zec6u3nJeG27RIvlnoN/K', 'patient', 1, '2024-11-18 19:35:01'),
-(52, 'tuoi', '$2b$10$tSEoRKPmGeEPfpU/d7YimuT2ebjRRwhEau8w5BlP6R/.eMfPO58jO', 'doctor', 1, '2024-11-22 14:20:04');
+(1, 'admin', '$2b$10$GJi53bWUZ8DM09CrvVTSkuP7POV7eBKeqi.2Nd2dtMl6cDkWvT30i', 'admin', 1, '2024-11-23 01:19:28'),
+(2, 'tuoinguyen', '$2b$10$GJi53bWUZ8DM09CrvVTSkuP7POV7eBKeqi.2Nd2dtMl6cDkWvT30i', 'patient', 1, '2024-11-23 01:22:09'),
+(3, 'drkhanh', '$2b$10$oZLhhsqZ7u9yrFfCABC00eKqG1.GOxb/ejGffOrMQ94iVx1Tm7sc6', 'doctor', 1, '2024-11-23 01:26:25'),
+(4, 'drtrang', '$2b$10$4dlSfC8gy5COZGSJMmK4yeWiGzcCVL5Nof7IEA8pUDESeevmmSQQ2', 'doctor', 1, '2024-11-23 01:28:36'),
+(5, 'dranh', '$2b$10$DQ05ijEWlI1YRwzURGyuCuUJ6s6cCxoiUp.9g2i8JKeT/SDOWL0oa', 'doctor', 1, '2024-11-23 01:29:40'),
+(6, 'drduc', '$2b$10$PjUv4fUMubfgx9uDyz7SgOt8wxe1vcCmF5vKOgUOeERpu/hZNkL9.', 'doctor', 1, '2024-11-23 01:30:30'),
+(7, 'drquoc', '$2b$10$ARira0QoGSMXAx4UE6jJFOD0siM.ncZgftlNSQXEazu2ZRA546YCe', 'doctor', 1, '2024-11-23 01:31:08'),
+(8, 'drbkhanh', '$2b$10$d.Mos3oleprDbRDGePmihuubtMXhYLH6d.GoBftfLP536/BsNWsSC', 'doctor', 1, '2024-11-23 01:31:50'),
+(9, 'drxuyen', '$2b$10$4SN.I7oQ2yAj/ly1OZy73.Tc/5fnL1TD8U/o2HMetlRbc7EaEcetO', 'doctor', 1, '2024-11-23 01:32:37'),
+(10, 'drtan', '$2b$10$sqLg9eswXt9kN5Imzu.9F.fYguZcQpGXDXDHENS5YQISjRNmxY11O', 'doctor', 1, '2024-11-23 01:33:31'),
+(11, 'drhuong', '$2b$10$LUzY/c3Pdrqekr9.5hACauMG5DmMB3Ti4/7sgijZLAo6m9jSQCoGu', 'doctor', 1, '2024-11-23 01:35:13'),
+(12, 'drtung', '$2b$10$/9w8ji.htjL8MkS9HqgBiOhsHZghwaiixp72C9fZjWbO3MYzvsS4i', 'doctor', 1, '2024-11-23 01:36:55'),
+(13, 'drthang', '$2b$10$1xVprREHzX/HYViGkDJCouMFNz4AHBLG0ssOEOxnVK1VklfUZQiEG', 'doctor', 1, '2024-11-23 01:38:16'),
+(14, 'thidep', '$2b$10$kH09PIPd/1FXjeaVmRhioeikvfdhdY/3uVaTMKKhxn2lPL1Uk52UK', 'patient', 1, '2024-11-23 01:41:14');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -422,43 +373,43 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `booking_appointments`
 --
 ALTER TABLE `booking_appointments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT cho bảng `follow_up_appointments`
 --
 ALTER TABLE `follow_up_appointments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `medical_records`
 --
 ALTER TABLE `medical_records`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `specialties`
 --
 ALTER TABLE `specialties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
