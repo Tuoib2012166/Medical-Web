@@ -3,8 +3,9 @@ const bcrypt = require('bcrypt');
 
 exports.getPatients = async (req, res) => {
     console.log("Get patients request received");
+    const { doctorId } = req.query;
     try {
-        const selectPatientsSql = `
+        let selectPatientsSql = `
             SELECT
                 p.id,
                 u.username,
@@ -20,11 +21,15 @@ exports.getPatients = async (req, res) => {
                 patients p
                     LEFT JOIN
                 users u ON p.user_id = u.id
+                ${doctorId ? `left join booking_appointments b on b.user_id = p.id` : `` }
+            WHERE TRUE 
         `;
+        if (doctorId) {
+            selectPatientsSql += ` AND b.doctor_id = ${doctorId}`
+        }
+        
         const [patients,] = await db.query(selectPatientsSql);
-
-        console.log("Patients retrieved", patients);
-        return res.json(patients);
+        res.status(200).json(patients);
     } catch (error) {
         console.log("Failed to retrieve patients", error);
         return res.status(500).json({ message: "An error occurred while fetching the patients" });
@@ -62,9 +67,9 @@ exports.addPatient = async (req, res) => {
 };
 
 exports.updatePatient = async (req, res) => {
-    const { fullname, username, phone, address, gender, birth_year } = req.body;
+    const { fullname, phone, address, gender, birth_year } = req.body;
     const { id } = req.params;
-    console.log('Updating patient with data:', { fullname, username, phone, address, gender, birth_year, id });
+    console.log('Updating patient with data:', { fullname, phone, address, gender, birth_year, id });
 
     const connection = await db.getConnection();
     try {
@@ -81,9 +86,7 @@ exports.updatePatient = async (req, res) => {
 
         const userId = rows[0].user_id;
 
-        const updateUserSql = 'UPDATE users SET username = ? WHERE id = ?';
         const updatePatientSql = 'UPDATE patients SET fullname = ?, phone = ?, address = ?, gender = ?, birth_year = ? WHERE id = ?';
-        await connection.execute(updateUserSql, [username, userId]);
         await connection.execute(updatePatientSql, [fullname, phone, address, gender, birth_year, id]);
         await connection.commit();
 

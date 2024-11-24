@@ -5,8 +5,9 @@ function formatQuery(query, params) {
 }
 
 exports.getMedicalRecords = async (req, res) => {
+    const { patientId, doctorId } = req.query;
     try {
-        const query = `
+        let query = `
             SELECT
                 medical_records.id,
                 patients.id AS patient_id,
@@ -35,7 +36,16 @@ exports.getMedicalRecords = async (req, res) => {
                 JOIN doctors ON medical_records.doctor_id = doctors.id
                 JOIN specialties ON doctors.specialty = specialties.id
                 JOIN services ON medical_records.service = services.id
+            WHERE TRUE
         `;
+
+        if (patientId) {
+            query += ` AND medical_records.patient_id=${patientId}`
+        }
+
+        if (doctorId) {
+            query += ` AND medical_records.doctor_id=${doctorId}`
+        }
         const [medicalRecords] = await db.query(query);
         res.json(medicalRecords);
     } catch (error) {

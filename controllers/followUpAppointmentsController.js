@@ -2,7 +2,7 @@ const db = require('../db');
 
 // Get all follow-up appointments
 exports.getAllFollowUpAppointments = async (req, res) => {
-    const { patient_id } = req.query;
+    const { patient_id, doctorId, today } = req.query;
     try {
         let sql = `
             SELECT
@@ -22,10 +22,21 @@ exports.getAllFollowUpAppointments = async (req, res) => {
                 patients p ON f.patient_name = p.id
             WHERE TRUE
         `;
-        console.log('SQL Query:', sql);
         if (patient_id) {
             sql += ` and f.patient_name = ${patient_id}`
         }
+        if (doctorId) {
+            sql += ` and f.doctor_id = ${doctorId}`
+        }
+
+         // Add the date filter if 'today' is passed in the query
+        
+
+        if(today) {
+            sql += `    AND DATE(f.follow_up_date) = '${today}'
+`
+        }
+        console.log('SQL Query:', sql);
 
         const [appointments,] = await db.query(sql);
         console.log("appointments: ", appointments)
