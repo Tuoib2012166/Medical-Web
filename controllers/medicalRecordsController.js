@@ -11,7 +11,7 @@ exports.getMedicalRecords = async (req, res) => {
             SELECT
                 medical_records.id,
                 patients.id AS patient_id,
-                patients.fullname AS patient_name,
+                b.fullname AS patient_name,
                 patients.address,
                 patients.phone,
                 CASE
@@ -36,6 +36,7 @@ exports.getMedicalRecords = async (req, res) => {
                 JOIN doctors ON medical_records.doctor_id = doctors.id
                 JOIN specialties ON doctors.specialty = specialties.id
                 JOIN services ON medical_records.service = services.id
+                LEFT JOIN booking_appointments b ON b.user_id = patients.id
             WHERE TRUE
         `;
 

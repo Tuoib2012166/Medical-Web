@@ -13,13 +13,13 @@ exports.getAllFollowUpAppointments = async (req, res) => {
                 f.notes,
                 f.doctor_id,
                 d.fullname AS doctor_name,
-                p.fullname AS patient_name
+                b.fullname AS patient_name
             FROM
                 follow_up_appointments f
                     LEFT JOIN 
                 doctors d ON f.doctor_id = d.id
                     LEFT JOIN
-                patients p ON f.patient_name = p.id
+                booking_appointments b on b.id = f.patient_name
             WHERE TRUE
         `;
         if (patient_id) {
@@ -39,7 +39,7 @@ exports.getAllFollowUpAppointments = async (req, res) => {
         console.log('SQL Query:', sql);
 
         const [appointments,] = await db.query(sql);
-        console.log("appointments: ", appointments)
+        console.log("follow_up_app: ", appointments)
         res.status(200).json(appointments);
     } catch (error) {
         console.error('Error fetching follow-up appointments:', error);
