@@ -19,11 +19,11 @@ exports.getAllFollowUpAppointments = async (req, res) => {
                     LEFT JOIN 
                 doctors d ON f.doctor_id = d.id
                     LEFT JOIN
-                booking_appointments b on b.id = f.patient_name
+                booking_appointments b on b.id = f.appointment_id
             WHERE TRUE
         `;
         if (patient_id) {
-            sql += ` and f.patient_name = ${patient_id}`
+            sql += ` and f.patient_id = ${patient_id}`
         }
         if (doctorId) {
             sql += ` and f.doctor_id = ${doctorId}`
@@ -49,15 +49,15 @@ exports.getAllFollowUpAppointments = async (req, res) => {
 
 // Add a new follow-up appointment
 exports.addFollowUpAppointment = async (req, res) => {
-    const { patientName, followUpDate, time, notes, doctorId } = req.body;
+    const { patientName = "test", followUpDate, time, notes, doctorId, patient_id, appointment_id } = req.body;
     if (doctorId === undefined) {
         return res.status(400).json({ message: 'Doctor ID is required' });
     }
     try {
-        const insertAppointmentSql = 'INSERT INTO follow_up_appointments (patient_name, follow_up_date, time, notes, doctor_id, created_at) VALUES (?, ?, ?, ?, ?, NOW())';
+        const insertAppointmentSql = 'INSERT INTO follow_up_appointments (patient_name, follow_up_date, time, notes, doctor_id, created_at, patient_id, appointment_id) VALUES (?, ?, ?, ?, ?, NOW(), ?, ?)';
         console.log('SQL Query:', insertAppointmentSql);
         console.log('Request Data:', req.body);
-        await db.execute(insertAppointmentSql, [patientName, followUpDate, time, notes, doctorId]);
+        await db.execute(insertAppointmentSql, [patientName, followUpDate, time, notes, doctorId, patient_id, appointment_id]);
         return res.status(200).json({ message: 'Follow-up appointment added successfully' });
     } catch (error) {
         console.error('Error adding follow-up appointment:', error);
