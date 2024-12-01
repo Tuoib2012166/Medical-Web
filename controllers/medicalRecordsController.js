@@ -40,19 +40,20 @@ exports.getMedicalRecords = async (req, res) => {
         //     WHERE TRUE
         // `;
 
+
         let query = `select 
 
         m.id,
-        p.id as patient_id,
+        m.patient_id,
         appt.fullname as patient_name,
-        p.address,
-        p.phone,
+        appt.address,
+        appt.phone,
         CASE
             WHEN m.gender = 'male' THEN 'Nam'
             WHEN m.gender = 'female' THEN 'Nữ'
             ELSE 'Khác'
         END AS gender,
-        p.birth_year,
+        appt.birth_year,
         d.id AS doctor_id,
         d.fullname AS doctor_name,
         sp.name AS specialty_name,
@@ -60,14 +61,13 @@ exports.getMedicalRecords = async (req, res) => {
         m.treatment,
         m.record_date,
         m.services,
-        m.prescription
+        m.prescription,
+        m.appointment_id
 
         from medical_records m
-        join patients p on m.patient_id = p.id
-        join booking_appointments appt on appt.user_id = p.id
+        join booking_appointments appt on appt.id = m.appointment_id
         join doctors d ON m.doctor_id = d.id
         left JOIN specialties sp ON d.specialty = sp.id
-
         where true
         `
         if (patientId) {
@@ -77,8 +77,8 @@ exports.getMedicalRecords = async (req, res) => {
         if (doctorId) {
             query += ` AND m.doctor_id=${doctorId}`
         }
+
        
-        console.log(query)
         const [medicalRecords] = await db.query(query);
         return res.status(200).json(medicalRecords);
     } catch (error) {
@@ -92,7 +92,7 @@ exports.addMedicalRecord = async (req, res) => {
         patient_id, doctor_id, diagnosis, treatment,
         record_date, address, phone, gender, birth_year,
         specialty, service, quantity, unit_price,
-        total_price, prescription, services
+        total_price, prescription, services, appointment_id
     } = req.body;
 
     console.log('Record Date:', record_date);
@@ -110,15 +110,15 @@ exports.addMedicalRecord = async (req, res) => {
                 patient_id, doctor_id, diagnosis, treatment,
                 record_date, address, phone, gender, birth_year,
                 specialty, service, quantity, unit_price,
-                total_price, prescription,
+                total_price, prescription, appointment_id,
                 services
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
         const params = [
             patient_id, doctor_id, diagnosis, treatment,
             formattedDate, address, phone, gender, birth_year,
             specialty, service, quantity, unit_price,
-            total_price, prescription, JSON.stringify(services)
+            total_price, prescription, appointment_id, JSON.stringify(services)
         ];
 
         console.log('Executing query:', query, params);

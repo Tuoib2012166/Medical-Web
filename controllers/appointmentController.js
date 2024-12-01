@@ -171,7 +171,7 @@ exports.deleteAppointment = async (req, res) => {
     console.log("Delete appointment request received", req.params);
     const { id } = req.params;
     try {
-        const deleteAppointmentSql = 'DELETE FROM hour_appointments WHERE id = ?';
+        const deleteAppointmentSql = 'DELETE FROM booking_appointments WHERE id = ?';
         await db.execute(deleteAppointmentSql, [id]);
 
         console.log("Appointment deleted successfully");
