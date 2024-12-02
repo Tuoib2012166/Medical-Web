@@ -18,7 +18,7 @@ exports.getAllFollowUpAppointments = async (req, res) => {
                 follow_up_appointments f
                     LEFT JOIN 
                 doctors d ON f.doctor_id = d.id
-                    LEFT JOIN
+                JOIN
                 booking_appointments b on b.id = f.appointment_id
             WHERE TRUE
         `;
