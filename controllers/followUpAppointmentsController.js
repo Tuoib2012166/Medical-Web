@@ -68,7 +68,7 @@ exports.addFollowUpAppointment = async (req, res) => {
 // Update an existing follow-up appointment
 exports.updateFollowUpAppointment = async (req, res) => {
     const { id } = req.params;
-    const { patientName, followUpDate, time, notes, doctorId } = req.body;
+    const { patient_name: patientName, followUpDate, time, notes, doctorId } = req.body;
     try {
         const updateAppointmentSql = 'UPDATE follow_up_appointments SET patient_name = ?, follow_up_date = ?, time = ?, notes = ?, doctor_id = ? WHERE id = ?';
         console.log('SQL Query:', updateAppointmentSql);
