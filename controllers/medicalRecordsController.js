@@ -62,6 +62,7 @@ exports.getMedicalRecords = async (req, res) => {
         m.record_date,
         m.services,
         m.prescription,
+        m.amount,
         m.appointment_id
 
         from medical_records m
@@ -92,7 +93,7 @@ exports.addMedicalRecord = async (req, res) => {
         patient_id, doctor_id, diagnosis, treatment,
         record_date, address, phone, gender, birth_year,
         specialty, service, quantity, unit_price,
-        total_price, prescription, services, appointment_id
+        total_price, prescription, amount, services, appointment_id
     } = req.body;
 
     console.log('Record Date:', record_date);
@@ -110,15 +111,15 @@ exports.addMedicalRecord = async (req, res) => {
                 patient_id, doctor_id, diagnosis, treatment,
                 record_date, address, phone, gender, birth_year,
                 specialty, service, quantity, unit_price,
-                total_price, prescription, appointment_id,
+                total_price, prescription, amount, appointment_id,
                 services
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `;
         const params = [
             patient_id, doctor_id, diagnosis, treatment,
             formattedDate, address, phone, gender, birth_year,
             specialty, service, quantity, unit_price,
-            total_price, prescription, appointment_id, JSON.stringify(services)
+            total_price, prescription,amount, appointment_id, JSON.stringify(services)
         ];
 
         console.log('Executing query:', query, params);

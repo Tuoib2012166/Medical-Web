@@ -16,16 +16,17 @@ exports.getPatients = async (req, res) => {
                 p.phone,
                 p.address,
                 p.gender,
-                p.birth_year
+                p.birth_year,
+                p.email  -- Thêm email vào truy vấn
             FROM
                 patients p
                     LEFT JOIN
                 users u ON p.user_id = u.id
-                ${doctorId ? `left join booking_appointments b on b.user_id = p.id` : `` }
+                ${doctorId ? `LEFT JOIN booking_appointments b ON b.user_id = p.id` : `` }
             WHERE TRUE 
         `;
         if (doctorId) {
-            selectPatientsSql += ` AND b.doctor_id = ${doctorId}`
+            selectPatientsSql += ` AND b.doctor_id = ${doctorId}`;
         }
         
         const [patients,] = await db.query(selectPatientsSql);
@@ -36,9 +37,10 @@ exports.getPatients = async (req, res) => {
     }
 };
 
+
 exports.addPatient = async (req, res) => {
     console.log("Add patient request received", req.body);
-    const { username, password, fullname, phone, address, gender, birth_year } = req.body;
+    const { username, password, fullname, phone, address, gender, birth_year, email } = req.body;
 
     const connection = await db.getConnection();
     try {
@@ -50,8 +52,8 @@ exports.addPatient = async (req, res) => {
 
         const userId = userResult.insertId;
 
-        const insertPatientSql = 'INSERT INTO patients (user_id, fullname, phone, address, gender, birth_year, created_at) VALUES (?, ?, ?, ?, ?, ?, NOW())';
-        await connection.execute(insertPatientSql, [userId, fullname, phone, address, gender, birth_year]);
+        const insertPatientSql = 'INSERT INTO patients (user_id, fullname, phone, address, gender, birth_year, email, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, NOW())';
+        await connection.execute(insertPatientSql, [userId, fullname, phone, address, gender, birth_year, email]);
 
         await connection.commit();
 
@@ -66,10 +68,11 @@ exports.addPatient = async (req, res) => {
     }
 };
 
+
 exports.updatePatient = async (req, res) => {
-    const { fullname, phone, address, gender, birth_year } = req.body;
+    const { fullname, phone, address, gender, birth_year, email } = req.body;
     const { id } = req.params;
-    console.log('Updating patient with data:', { fullname, phone, address, gender, birth_year, id });
+    console.log('Updating patient with data:', { fullname, phone, address, gender, birth_year, email, id });
 
     const connection = await db.getConnection();
     try {
@@ -86,8 +89,8 @@ exports.updatePatient = async (req, res) => {
 
         const userId = rows[0].user_id;
 
-        const updatePatientSql = 'UPDATE patients SET fullname = ?, phone = ?, address = ?, gender = ?, birth_year = ? WHERE id = ?';
-        await connection.execute(updatePatientSql, [fullname, phone, address, gender, birth_year, id]);
+        const updatePatientSql = 'UPDATE patients SET fullname = ?, phone = ?, address = ?, gender = ?, birth_year = ?, email = ? WHERE id = ?';
+        await connection.execute(updatePatientSql, [fullname, phone, address, gender, birth_year, email, id]);
         await connection.commit();
 
         console.log("Patient updated successfully");
@@ -100,6 +103,7 @@ exports.updatePatient = async (req, res) => {
         connection.release();
     }
 };
+
 
 exports.deletePatient = async (req, res) => {
     console.log("Delete patient request received", req.params);
