@@ -226,9 +226,9 @@ exports.rejectAppointment = async (req, res) => {
         const mailOptions = {
             from: 'tuoinguyen106@gmail.com',
             to: patient.email,  // Email của bệnh nhân
-            subject: 'Thông báo về cuộc hẹn bị từ chối',
+            subject: 'Thông báo về cuộc hẹn bị hủy',
             text: `Kính gửi ${patient.fullname},\n\n
-            Chúng tôi rất tiếc phải thông báo rằng cuộc hẹn của bạn với phòng khám Dental Care vào ngày ${patient.appointment_date} lúc ${patient.appointment_time} đã bị từ chối. \n
+            Chúng tôi rất tiếc phải thông báo rằng cuộc hẹn của bạn với phòng khám Dental Care vào ngày ${patient.appointment_date} lúc ${patient.appointment_time} đã bị hủy. \n
             Lý do cuộc hẹn không thể được xác nhận có thể do một số yếu tố về lịch trình của bác sĩ hoặc tình trạng khác.\n
 
             Chúng tôi hiểu rằng điều này có thể gây ra sự bất tiện cho bạn và xin lỗi về sự thay đổi này. Nếu bạn muốn đặt lại lịch hẹn, vui lòng truy cập trang web của chúng tôi để kiểm tra các lịch hẹn mới và thực hiện đặt lịch lại.\n
